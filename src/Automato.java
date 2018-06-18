@@ -5,35 +5,38 @@ public class Automato {
 
     public static void main(String[] args) {
         File file = new File("src//exemplo2.txt");
-        new Automato(file);
+        try {
+            new Automato(file);
+        } catch(IllegalArgumentException e) {
+            e.printStackTrace();
+        }
     }
 
-    private Automato() {
+    private Automato() throws IOException{
         String palavra = "";
-        try {
-            while (!palavra.equals("sair")) {
-                Scanner scanner = new Scanner(System.in);
-                System.out.print(">> ");
-                palavra = scanner.nextLine();
-                identificaPalavra(palavra);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        while (!palavra.equals("sair")) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print(">> ");
+            palavra = scanner.nextLine();
+            identificaPalavra(palavra);
         }
     }
 
     private Automato(File file) {
+        int linha = 1;
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
-            while ((st = br.readLine()) != null)
+            while ((st = br.readLine()) != null) {
                 identificaPalavra(st);
+                linha++;
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("Erro na linha " + linha);
         }
     }
 
-    private void identificaPalavra(String linha) throws IOException {
+    private void identificaPalavra(String linha) throws IOException{
         String ultimaPalavra = "";
         try {
             String estadoAtual = "q0";
@@ -62,7 +65,7 @@ public class Automato {
                             estadoAtual = "q0";
                             i--;
                         }
-                    } else if (letra != ' ') {
+                    } else if (!buffer.toString().equals("") || letra != ' ') {
                         throw new IOException("Impossível reconhcer simbolo: " + buffer.toString());
                     }
                 } catch (StringIndexOutOfBoundsException e) {
