@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Automato {
 
     public static void main(String[] args) {
-        File file = new File("src//exemplo1.txt");
+        File file = new File("src//exemplo2.txt");
         new Automato(file);
     }
 
@@ -48,11 +48,20 @@ public class Automato {
 
                 } catch (ArrayIndexOutOfBoundsException e) {
                     if (Util.estadosReconhecedores.contains(estadoAtual) && (letra == ' ' || Util.simbolosEspeciais.containsKey(String.valueOf(letra)) || Util.simbolosEspeciais.containsKey(buffer.toString()))) {
-                        descricao = Util.pegaCodigoDescricao(buffer.toString());
-                        System.out.println(descricao + ": " + buffer.toString());
-                        buffer = new StringBuffer();
-                        estadoAtual = "q0";
-                        i--;
+                        try {
+                            if (letra == '.' && i < linha.length() - 1) {
+                               String prefixo = buffer.toString() + String.valueOf(letra) + String.valueOf(linha.charAt(i+1));
+                               Double.valueOf(prefixo);
+                               throw new IOException("Não permite números decimais!");
+                            }
+                            throw new NumberFormatException();
+                        } catch (NumberFormatException excepttion) {
+                            descricao = Util.pegaCodigoDescricao(buffer.toString());
+                            System.out.println(descricao + ": " + buffer.toString());
+                            buffer = new StringBuffer();
+                            estadoAtual = "q0";
+                            i--;
+                        }
                     } else if (letra != ' ') {
                         throw new IOException("Impossível reconhcer simbolo: " + buffer.toString());
                     }
