@@ -23,7 +23,7 @@ public class Util {
 
     public static final List<String> estadosReconhecedores = Arrays.asList("q1", "q2", "q3", "q48", "q47", "q62");
     private static String[][] matrizTransicao = new String[alfabeto.size()][estados.size()];
-    public static Map<String, String> palavrasReservadas = new HashMap<>();
+    private static Map<String, String> palavrasReservadas = new HashMap<>();
     public static Map<String, String> simbolosEspeciais = new HashMap<>();
 
     static {
@@ -676,7 +676,7 @@ public class Util {
     public static String pegaCodigoDescricao(String palavra) {
         String descicao = palavrasReservadas.get(palavra);
         if (descicao == null) {
-            if (palavra.startsWith("\"")) {
+            if (palavra.startsWith("\"") && palavra.charAt(palavra.length()-1) == '"') {
                 if (palavra.length() > 257) {
                     throw new IllegalArgumentException("Limite de caracteres em literais excedido!");
                 }
