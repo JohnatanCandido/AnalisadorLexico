@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Automato {
 
     public static void main(String[] args) {
-        File file = new File("src//exemplo1.txt");
+        File file = new File("exemplo1.txt");
         try {
             new Automato(file);
         } catch(IllegalArgumentException e) {
