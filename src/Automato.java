@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Automato {
 
     public static void main(String[] args) {
-        File file = new File("src//exemplo2.txt");
+        File file = new File("src//exemplo1.txt");
         try {
             new Automato(file);
         } catch(IllegalArgumentException e) {
@@ -12,13 +12,17 @@ public class Automato {
         }
     }
 
-    private Automato() throws IOException{
+    private Automato() {
         String palavra = "";
-        while (!palavra.equals("sair")) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print(">> ");
-            palavra = scanner.nextLine();
-            identificaPalavra(palavra);
+        try {
+            while (!palavra.equals("sair")) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print(">> ");
+                palavra = scanner.nextLine();
+                identificaPalavra(palavra);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -32,7 +36,7 @@ public class Automato {
                 linha++;
             }
         } catch (IOException e) {
-            throw new IllegalArgumentException("Erro na linha " + linha);
+            throw new IllegalArgumentException("Erro na linha " + linha + "\n" + e.getMessage());
         }
     }
 
@@ -40,7 +44,6 @@ public class Automato {
         String ultimaPalavra = "";
         try {
             String estadoAtual = "q0";
-            String descricao;
             StringBuffer buffer = new StringBuffer();
             for (int i = 0; i <= linha.length(); i++) {
                 char letra = '¨';
@@ -59,8 +62,7 @@ public class Automato {
                             }
                             throw new NumberFormatException();
                         } catch (NumberFormatException excepttion) {
-                            descricao = Util.pegaCodigoDescricao(buffer.toString());
-                            System.out.println(descricao + ": " + buffer.toString());
+                            printCodigoDescricao(buffer);
                             buffer = new StringBuffer();
                             estadoAtual = "q0";
                             i--;
@@ -70,8 +72,7 @@ public class Automato {
                     }
                 } catch (StringIndexOutOfBoundsException e) {
                     if (Util.estadosReconhecedores.contains(estadoAtual)) {
-                        descricao = Util.pegaCodigoDescricao(buffer.toString());
-                        System.out.println(descricao + ": " + buffer.toString());
+                        printCodigoDescricao(buffer);
                     } else {
                         throw new IOException("Impossível reconhcer simbolo: " + buffer.toString());
                     }
@@ -80,6 +81,13 @@ public class Automato {
         } catch (IllegalArgumentException e) {
             System.out.println("Impossível identificar símbolo: " + ultimaPalavra);
             throw new IOException(e.getMessage());
+        }
+    }
+
+    private void printCodigoDescricao(StringBuffer buffer) {
+        String descricao = Util.pegaCodigoDescricao(buffer.toString());
+        if (!descricao.equals("Comentário")) {
+            System.out.println(descricao + ": " + buffer.toString());
         }
     }
 }
