@@ -3,30 +3,31 @@ import java.util.*;
 
 public class Sintatico {
 
-    private static List<Integer> pilha = new ArrayList<>();
-    private static List<Integer[]> palavras;
+    private static Stack<Integer> pilha = new Stack<>();
+    private static Stack<Integer[]> palavras;
 
     public static void main(String[] args) throws ErroSintatico{
         fazAnaliseLexica();
+        Integer[] simboloLinha = palavras.pop();
 
-        pilha.add(ParserConstants.START_SYMBOL);
+        pilha.push(ParserConstants.START_SYMBOL);
         while(!pilha.isEmpty()) {
-            if (pilha.get(pilha.size() - 1) < ParserConstants.FIRST_NON_TERMINAL) {
-                if (pilha.get(pilha.size() - 1).equals(palavras.get(0)[0])) {
-                    pilha.remove(pilha.size() - 1);
-//                    System.out.println(teste[palavras.get(0)[0] - 2]);
-                    palavras.remove(0);
+            Integer topo = pilha.pop();
+            if (topo < ParserConstants.FIRST_NON_TERMINAL) {
+                if (topo.equals(simboloLinha[0])) {
+                    System.out.println(teste[simboloLinha[0] - 2]);
+                    if (!palavras.isEmpty())
+                        simboloLinha = palavras.pop();
                 } else {
-                    throw new ErroSintatico("Erro 1. Linha: " + palavras.get(0)[1].toString());
+                    throw new ErroSintatico("Erro 1. Linha: " + simboloLinha[1].toString());
                 }
             } else {
-                int idProducao = ParserConstants.PARSER_TABLE[pilha.get(pilha.size() - 1)-46][palavras.get(0)[0] - 1];
+                int idProducao = ParserConstants.PARSER_TABLE[topo-46][simboloLinha[0] - 1];
                 if (idProducao != -1) {
                     int[] retorno = ParserConstants.PRODUCTIONS[idProducao];
-                    pilha.remove(pilha.size() - 1);
                     empilha(retorno);
                 } else {
-                    throw new ErroSintatico("Erro 2. . Linha: " + palavras.get(0)[1].toString());
+                    throw new ErroSintatico("Erro 2. . Linha: " + simboloLinha[1].toString());
                 }
             }
         }

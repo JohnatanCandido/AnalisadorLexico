@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Lexico {
 
@@ -50,7 +51,7 @@ public class Lexico {
         }
     }
 
-    public static List<Integer[]> getListaPalavrasReconhecidas(File file) {
+    public static Stack<Integer[]> getListaPalavrasReconhecidas(File file) {
         int linha = 1;
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -63,7 +64,10 @@ public class Lexico {
         } catch (ErroLexico | IOException e) {
             throw new IllegalArgumentException("Erro na linha " + linha + "\n" + e.getMessage());
         }
-        return palavrasReconhecidas;
+        Stack<Integer[]> pilhaPalavrasReconhecidas = new Stack<>();
+        for (int i = palavrasReconhecidas.size() - 1; i >= 0; i--)
+            pilhaPalavrasReconhecidas.push(palavrasReconhecidas.get(i));
+        return pilhaPalavrasReconhecidas;
     }
 
     private static void identificaPalavra(String linha, Integer num_linha) throws ErroLexico{
