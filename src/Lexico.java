@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Lexico {
 
-    private static List<Integer> palavrasReconhecidas = new ArrayList<>();
+    private static List<Integer[]> palavrasReconhecidas = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -28,7 +28,7 @@ public class Lexico {
                 Scanner scanner = new Scanner(System.in);
                 System.out.print(">> ");
                 palavra = scanner.nextLine().toLowerCase();
-                identificaPalavra(palavra);
+                identificaPalavra(palavra, 1);
             }
         } catch (ErroLexico e) {
             e.printStackTrace();
@@ -42,7 +42,7 @@ public class Lexico {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
             while ((st = br.readLine()) != null) {
-                identificaPalavra(st.trim().toLowerCase());
+                identificaPalavra(st.trim().toLowerCase(), linha);
                 linha++;
             }
         } catch (ErroLexico | IOException e) {
@@ -50,14 +50,14 @@ public class Lexico {
         }
     }
 
-    public static List<Integer> getListaPalavrasReconhecidas(File file) {
+    public static List<Integer[]> getListaPalavrasReconhecidas(File file) {
         int linha = 1;
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
             while ((st = br.readLine()) != null) {
                 if (!st.equals(""))
-                    identificaPalavra(st.trim().toLowerCase());
+                    identificaPalavra(st.trim().toLowerCase(), linha);
                 linha++;
             }
         } catch (ErroLexico | IOException e) {
@@ -66,7 +66,7 @@ public class Lexico {
         return palavrasReconhecidas;
     }
 
-    private static void identificaPalavra(String linha) throws ErroLexico{
+    private static void identificaPalavra(String linha, Integer num_linha) throws ErroLexico{
         try {
             String estadoAtual = "q0";
             StringBuffer buffer = new StringBuffer();
@@ -87,7 +87,7 @@ public class Lexico {
                             }
                             throw new NumberFormatException();
                         } catch (NumberFormatException excepttion) {
-                            pegaCodigoPalavraReconhecida(buffer);
+                            pegaCodigoPalavraReconhecida(buffer, num_linha);
                             buffer = new StringBuffer();
                             estadoAtual = "q0";
                             i--;
@@ -97,7 +97,7 @@ public class Lexico {
                     }
                 } catch (StringIndexOutOfBoundsException e) {
                     if (Util.estadosReconhecedores.contains(estadoAtual)) {
-                        pegaCodigoPalavraReconhecida(buffer);
+                        pegaCodigoPalavraReconhecida(buffer, num_linha);
                     } else {
                         throw new ErroLexico("Impossível reconhcer simbolo: " + buffer.toString() + letra);
                     }
@@ -116,11 +116,11 @@ public class Lexico {
                     || Util.simbolosEspeciais.containsKey(buffer.toString()));
     }
 
-    private static void pegaCodigoPalavraReconhecida(StringBuffer buffer) throws ErroLexico {
+    private static void pegaCodigoPalavraReconhecida(StringBuffer buffer, int linha) throws ErroLexico {
         Integer codigo = Util.pegaCodigoDescricao(buffer.toString());
         if (codigo > 0) {
 //            System.out.println(buffer.toString());
-            palavrasReconhecidas.add(codigo);
+            palavrasReconhecidas.add(new Integer[]{codigo, linha});
         }
     }
 }

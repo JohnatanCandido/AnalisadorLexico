@@ -16,7 +16,7 @@ public class Util {
 
     public static final List<String> estadosReconhecedores = Arrays.asList("q1", "q2", "q3", "q48", "q47", "q62");
     private static String[][] matrizTransicao = new String[alfabeto.size()][estados.size()];
-    private static Map<String, Integer> palavrasReservadas = new HashMap<>();
+    public static Map<String, Integer> palavrasReservadas = new HashMap<>();
     public static Map<String, Integer> simbolosEspeciais = new HashMap<>();
 
     static {

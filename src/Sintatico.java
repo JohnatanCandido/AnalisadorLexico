@@ -1,12 +1,10 @@
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Sintatico {
 
     private static List<Integer> pilha = new ArrayList<>();
-    private static List<Integer> palavras;
+    private static List<Integer[]> palavras;
 
     public static void main(String[] args) throws ErroSintatico{
         fazAnaliseLexica();
@@ -14,21 +12,21 @@ public class Sintatico {
         pilha.add(ParserConstants.START_SYMBOL);
         while(!pilha.isEmpty()) {
             if (pilha.get(pilha.size() - 1) < ParserConstants.FIRST_NON_TERMINAL) {
-                if (pilha.get(pilha.size() - 1).equals(palavras.get(0))) {
+                if (pilha.get(pilha.size() - 1).equals(palavras.get(0)[0])) {
                     pilha.remove(pilha.size() - 1);
-                    System.out.println(teste[palavras.get(0) - 2]);
+//                    System.out.println(teste[palavras.get(0)[0] - 2]);
                     palavras.remove(0);
                 } else {
-                    throw new ErroSintatico("Erro 1");
+                    throw new ErroSintatico("Erro 1. Linha: " + palavras.get(0)[1].toString());
                 }
             } else {
-                int idProducao = ParserConstants.PARSER_TABLE[pilha.get(pilha.size() - 1)-46][palavras.get(0) - 1];
-                if (idProducao != -1 /* M(X, a) = X Y1 Y2... Yk */) {
+                int idProducao = ParserConstants.PARSER_TABLE[pilha.get(pilha.size() - 1)-46][palavras.get(0)[0] - 1];
+                if (idProducao != -1) {
                     int[] retorno = ParserConstants.PRODUCTIONS[idProducao];
                     pilha.remove(pilha.size() - 1);
                     empilha(retorno);
                 } else {
-                    throw new ErroSintatico("Erro 2");
+                    throw new ErroSintatico("Erro 2. . Linha: " + palavras.get(0)[1].toString());
                 }
             }
         }
