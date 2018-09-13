@@ -8,7 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fb69bc44-c873-47e9-ace3-151662182a21" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroSintatico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroSintatico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Sintatico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Sintatico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ErroSintatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ErroSintatico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lexico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lexico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ParserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParserConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sintatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sintatico.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,7 +30,7 @@
     <session id="58740832">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.29" value="1" />
@@ -34,19 +39,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="516" />
-          <entry key="txt" value="4" />
+          <entry key="java" value="1107" />
+          <entry key="txt" value="148" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="516" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JAVA" value="1107" />
+          <entry key="PLAIN_TEXT" value="148" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.file.types.open" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="4" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.file.extensions.open" />
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="4" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -54,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="52">
+              <caret line="553" column="42" lean-forward="true" selection-start-line="553" selection-start-column="42" selection-end-line="553" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,41 +81,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lexico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+            <state relative-caret-position="168">
+              <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sintatico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ErroSintatico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Sintatico.java">
+        <entry file="file://$PROJECT_DIR$/exemplo3.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exemplo1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exemplo2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="391">
+              <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -108,8 +123,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ParserConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1803">
-              <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+            <state relative-caret-position="1058">
+              <caret line="198" column="31" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exemplo1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="21" lean-forward="true" selection-end-line="25" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exemplo2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ScannerConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="124" column="26" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -117,8 +159,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            <state relative-caret-position="51">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -141,10 +183,12 @@
       <find>pilha.get(0</find>
       <find>pilha.get(pilha.size() - 1)</find>
       <find>palavras.get(0)</find>
+      <find>&quot;,</find>
     </findStrings>
     <replaceStrings>
       <replace>topo</replace>
       <replace>simboloLinha</replace>
+      <replace>&quot;,</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -160,12 +204,15 @@
         <option value="$PROJECT_DIR$/src/ErroLexico.java" />
         <option value="$PROJECT_DIR$/src/Automato.java" />
         <option value="$PROJECT_DIR$/src/ScannerConstants.java" />
-        <option value="$PROJECT_DIR$/src/ErroSintatico.java" />
         <option value="$PROJECT_DIR$/exemplo2.txt" />
         <option value="$PROJECT_DIR$/src/Util.java" />
         <option value="$PROJECT_DIR$/exemplo1.txt" />
+        <option value="$PROJECT_DIR$/src/Constants.java" />
+        <option value="$PROJECT_DIR$/src/ParserConstants.java" />
+        <option value="$PROJECT_DIR$/src/ErroSintatico.java" />
         <option value="$PROJECT_DIR$/src/Sintatico.java" />
         <option value="$PROJECT_DIR$/src/Lexico.java" />
+        <option value="$PROJECT_DIR$/exemplo3.txt" />
       </list>
     </option>
   </component>
@@ -205,6 +252,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,12 +271,10 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536876855161" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536880684223" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -362,10 +409,10 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15699404" />
       <window_info id="Structure" order="1" show_stripe_button="false" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
+      <window_info id="Image Layers" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -386,7 +433,7 @@
       <window_info anchor="right" id="Maven Projects" order="6" show_stripe_button="false" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32980332" />
-      <window_info active="true" anchor="right" id="Debug" order="9" visible="true" weight="0.41981846" />
+      <window_info anchor="right" id="Debug" order="9" weight="0.36308622" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15699404" />
@@ -398,11 +445,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34539473" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3442623" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.32894737" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.32786885" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -415,23 +462,11 @@
       <window_info anchor="right" id="Maven Projects" order="6" show_stripe_button="false" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32980332" />
-      <window_info anchor="right" id="Debug" order="9" weight="0.30408472" />
+      <window_info anchor="right" id="Debug" order="9" weight="0.35779122" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Sintatico.java</url>
-          <line>11</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -446,6 +481,11 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>ParserConstants.PARSER_TABLE[topo-46]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>pilha.get(pilha.size() - 1)-46</expression-string>
         <language-id>JAVA</language-id>
@@ -500,20 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ErroSintatico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ScannerConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -523,59 +549,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="52">
+          <caret line="553" column="42" lean-forward="true" selection-start-line="553" selection-start-column="42" selection-end-line="553" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exemplo1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ParserConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1803">
-          <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exemplo2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lexico.java">
+    <entry file="file://$PROJECT_DIR$/src/ScannerConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="123">
+          <caret line="124" column="26" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exemplo1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="21" lean-forward="true" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ParserConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="198" column="31" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ErroSintatico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sintatico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="117">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exemplo3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
         </state>
       </provider>
     </entry>

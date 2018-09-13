@@ -19,7 +19,7 @@ public class Sintatico {
                     if (!palavras.isEmpty())
                         simboloLinha = palavras.pop();
                 } else {
-                    throw new ErroSintatico("Erro 1. Linha: " + simboloLinha[1].toString());
+                    throw new ErroSintatico(simboloLinha[1], ParserConstants.PARSER_ERROR[topo]);
                 }
             } else {
                 int idProducao = ParserConstants.PARSER_TABLE[topo-46][simboloLinha[0] - 1];
@@ -27,7 +27,7 @@ public class Sintatico {
                     int[] retorno = ParserConstants.PRODUCTIONS[idProducao];
                     empilha(retorno);
                 } else {
-                    throw new ErroSintatico("Erro 2. . Linha: " + simboloLinha[1].toString());
+                    throw new ErroSintatico(simboloLinha[1], ParserConstants.PARSER_ERROR[topo]);
                 }
             }
         }
@@ -44,9 +44,9 @@ public class Sintatico {
     private static void fazAnaliseLexica() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Digite o número do exemplo: ");
-        String n = scanner.nextLine().toLowerCase();
+        //String n = scanner.nextLine().toLowerCase();
         scanner.close();
-        palavras = Lexico.getListaPalavrasReconhecidas(new File("exemplo" + n +".txt"));
+        palavras = Lexico.getListaPalavrasReconhecidas(new File("exemplo" + "3" +".txt"));
     }
 
     private static String[] teste = {

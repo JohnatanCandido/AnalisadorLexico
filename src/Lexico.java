@@ -57,7 +57,7 @@ public class Lexico {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
             while ((st = br.readLine()) != null) {
-                if (!st.equals(""))
+                if (!st.trim().equals(""))
                     identificaPalavra(st.trim().toLowerCase(), linha);
                 linha++;
             }
