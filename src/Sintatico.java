@@ -22,12 +22,12 @@ public class Sintatico {
                     throw new ErroSintatico(simboloLinha[1], ParserConstants.PARSER_ERROR[topo]);
                 }
             } else {
-                int idProducao = ParserConstants.PARSER_TABLE[topo-46][simboloLinha[0] - 1];
+                int idProducao = ParserConstants.PARSER_TABLE[topo-ParserConstants.FIRST_NON_TERMINAL][simboloLinha[0] - 1];
                 if (idProducao != -1) {
                     int[] retorno = ParserConstants.PRODUCTIONS[idProducao];
                     empilha(retorno);
                 } else {
-                    throw new ErroSintatico(simboloLinha[1], ParserConstants.PARSER_ERROR[topo]);
+                    throw new ErroSintatico(simboloLinha[1], Util.getMensagemTokensEsperados(topo));
                 }
             }
         }

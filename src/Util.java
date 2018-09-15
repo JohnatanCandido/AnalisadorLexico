@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Util {
 
@@ -628,5 +625,46 @@ public class Util {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    public static String getMensagemTokensEsperados(Integer topo) {
+        List<String> producoes = getProducoes(topo, true);
+        StringBuilder msg = new StringBuilder();
+        if (topo < ParserConstants.FIRST_NON_TERMINAL) {
+            msg.append(ParserConstants.PARSER_ERROR[topo]);
+            msg.append(", ");
+        }
+        msg.append(producoes.get(0));
+        for (int i=1; i<producoes.size(); i++) {
+            if (i == producoes.size() - 1) {
+                msg.append(" ou ");
+            } else {
+                msg.append(", ");
+            }
+            msg.append(producoes.get(i));
+        }
+        return msg.toString();
+    }
+
+    private static List<Integer> expandidos = new ArrayList<>();
+    private static List<String> getProducoes(Integer topo, boolean limparExpandidos) {
+        if (limparExpandidos)
+            expandidos.clear();
+        List<String> tokens = new ArrayList<>();
+        topo -= ParserConstants.FIRST_NON_TERMINAL;
+        for (Integer expansao: ParserConstants.PARSER_TABLE[topo]) {
+            if (expansao != -1) {
+                Integer producao = ParserConstants.PRODUCTIONS[expansao][0];
+                if (producao < ParserConstants.FIRST_NON_TERMINAL) {
+                    if (!ParserConstants.PARSER_ERROR[producao].equals("")) {
+                        tokens.add(ParserConstants.PARSER_ERROR[producao]);
+                    }
+                } else if (!expandidos.contains(producao)) {
+                    expandidos.add(producao);
+                    tokens.addAll(getProducoes(producao, false));
+                }
+            }
+        }
+        return tokens;
     }
 }

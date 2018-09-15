@@ -7,7 +7,7 @@ PROGRAM testeproc1;
         a :INTEGER;
     BEGIN (* teste *)
         READLN(a);
-        IF a=x THEN
+        IF a=2 THEN
             z:=z+x
         ELSE BEGIN
             z:=z-x;
