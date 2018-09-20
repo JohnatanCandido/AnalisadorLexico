@@ -7,26 +7,34 @@ public class Sintatico {
     private static Stack<Integer[]> palavras;
 
     public static void main(String[] args) throws ErroSintatico{
-        fazAnaliseLexica();
-        Integer[] simboloLinha = palavras.pop();
+        fazAnaliseLexica(); // Pega lista de símbolos do analisador sintático
+        Integer[] simboloLinha = palavras.pop(); // Pega o próximo símbolo da entrada
 
-        pilha.push(ParserConstants.START_SYMBOL);
-        while(!pilha.isEmpty()) {
-            Integer topo = pilha.pop();
-            if (topo < ParserConstants.FIRST_NON_TERMINAL) {
-                if (topo.equals(simboloLinha[0])) {
-                    System.out.println(teste[simboloLinha[0] - 2]);
-                    if (!palavras.isEmpty())
-                        simboloLinha = palavras.pop();
-                } else {
+        pilha.push(ParserConstants.START_SYMBOL); // Coloca o símbolo inicial na pilha
+        while(!pilha.isEmpty()) { // Enquanto a pilha não estiver vazia
+            Integer topo = pilha.pop(); // Pega o símbolo no topo da pilha
+
+            if (topo < ParserConstants.FIRST_NON_TERMINAL) { // Se for terminal
+                if (topo.equals(simboloLinha[0])) { // Verifica se é igual ao simbolo de entrada atual
+                    System.out.println(ParserConstants.PARSER_ERROR[simboloLinha[0]]);
+
+                    if (!palavras.isEmpty()) // Se ainda tiver mais simbolos a serem verificados
+                        simboloLinha = palavras.pop(); // Pega o próximo símbolo de entrada
+
+                } else { // Se não for lança um erro de que não era o símbolo esperado
                     throw new ErroSintatico(simboloLinha[1], ParserConstants.PARSER_ERROR[topo]);
                 }
-            } else {
+            } else { // Se não for terminal
+
+                // Busca na tabela de parsing
                 int idProducao = ParserConstants.PARSER_TABLE[topo-ParserConstants.FIRST_NON_TERMINAL][simboloLinha[0] - 1];
-                if (idProducao != -1) {
-                    int[] retorno = ParserConstants.PRODUCTIONS[idProducao];
-                    empilha(retorno);
-                } else {
+
+                if (idProducao != -1) { // Se encontrar
+                    int[] retorno = ParserConstants.PRODUCTIONS[idProducao]; // Pega os símbolos da expansão
+                    empilha(retorno); // Empilha de trás para frente
+                } else { // Se não encontrar
+
+                    // Lança um erro dizendo quais símbolos deveriam ter sido encontrados
                     throw new ErroSintatico(simboloLinha[1], Util.getMensagemTokensEsperados(topo));
                 }
             }
@@ -48,51 +56,4 @@ public class Sintatico {
         scanner.close();
         palavras = Lexico.getListaPalavrasReconhecidas(new File("exemplo" + "3" +".txt"));
     }
-
-    private static String[] teste = {
-            "program",
-            "identificador",
-            ";",
-            ".",
-            ",",
-            "const",
-            "=",
-            "inteiro",
-            "var",
-            ":",
-            "integer",
-            "procedure",
-            "(",
-            ")",
-            "begin",
-            "end",
-            ":=",
-            "call",
-            "if",
-            "then",
-            "else",
-            "while",
-            "do",
-            "repeat",
-            "until",
-            "readln",
-            "writeln",
-            "literal",
-            "case",
-            "of",
-            "for",
-            "to",
-            "<",
-            ">",
-            ">=",
-            "<=",
-            "<>",
-            "+",
-            "-",
-            "or",
-            "*",
-            "/",
-            "and",
-            "not"
-    };
 }
