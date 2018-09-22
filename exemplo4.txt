@@ -1,1 +1,6 @@
-if "teste"
+PROGRAM testeproc4; (*teste TESTE *)
+    CONST Z = 12;
+    BEGIN
+        READLN(x,y);
+    END
+.

@@ -627,44 +627,99 @@ public class Util {
         }
     }
 
-    public static String getMensagemTokensEsperados(Integer topo) {
-        List<String> producoes = getProducoes(topo, true);
+    public static String getMensagemTokensEsperados(Integer topo, Stack<Integer> pilha) {
+        Object[] producoes = getProducoes(topo, pilha, true).toArray();
         StringBuilder msg = new StringBuilder();
         if (topo < ParserConstants.FIRST_NON_TERMINAL) {
             msg.append(ParserConstants.PARSER_ERROR[topo]);
             msg.append(", ");
         }
-        msg.append(producoes.get(0));
-        for (int i=1; i<producoes.size(); i++) {
-            if (i == producoes.size() - 1) {
+        msg.append(producoes[0]);
+        for (int i=1; i<producoes.length; i++) {
+            if (i == producoes.length - 1) {
                 msg.append(" ou ");
             } else {
                 msg.append(", ");
             }
-            msg.append(producoes.get(i));
+            msg.append(producoes[i]);
         }
         return msg.toString();
     }
 
     private static List<Integer> expandidos = new ArrayList<>();
-    private static List<String> getProducoes(Integer topo, boolean limparExpandidos) {
+    private static Set<String> getProducoes(Integer topo, Stack<Integer> pilha, boolean limparExpandidos) {
         if (limparExpandidos)
             expandidos.clear();
-        List<String> tokens = new ArrayList<>();
-        topo -= ParserConstants.FIRST_NON_TERMINAL;
-        for (Integer expansao: ParserConstants.PARSER_TABLE[topo]) {
-            if (expansao != -1) {
+
+        Set<String> tokens = new HashSet<>();
+        if (topo < ParserConstants.FIRST_NON_TERMINAL)
+            tokens.add(ParserConstants.PARSER_ERROR[topo]);
+        else {
+            topo -= ParserConstants.FIRST_NON_TERMINAL;
+
+            for (Integer expansao: pegaExpansoes(topo)) {
                 Integer producao = ParserConstants.PRODUCTIONS[expansao][0];
-                if (producao < ParserConstants.FIRST_NON_TERMINAL) {
-                    if (!ParserConstants.PARSER_ERROR[producao].equals("")) {
-                        tokens.add(ParserConstants.PARSER_ERROR[producao]);
-                    }
+                if (producao > 0 && producao < ParserConstants.FIRST_NON_TERMINAL) {
+                    tokens.add(ParserConstants.PARSER_ERROR[producao]);
                 } else if (!expandidos.contains(producao)) {
-                    expandidos.add(producao);
-                    tokens.addAll(getProducoes(producao, false));
+                    if (producao == 0 && !pilha.isEmpty()) {
+                        if (pilha.get(pilha.size()-1) < ParserConstants.FIRST_NON_TERMINAL)
+                            tokens.add(ParserConstants.PARSER_ERROR[pilha.get(pilha.size()-1)]);
+                        else {
+                            topo = pilha.pop();
+                            tokens.addAll(getProducoes(topo, pilha, false));
+                        }
+                    } else if (!pilha.isEmpty()){
+                        expandidos.add(producao);
+                        tokens.addAll(getProducoes(producao, pilha, false));
+                    }
                 }
             }
         }
         return tokens;
+    }
+
+    private static Set<Integer> pegaExpansoes(Integer topo) {
+        Set<Integer> expansoes = new HashSet<>();
+        for (Integer exp: ParserConstants.PARSER_TABLE[topo]) {
+            if (exp != -1) {
+                expansoes.add(exp);
+            }
+        }
+        return expansoes;
+    }
+
+    public static void main(String[] args) {
+        TabelaSimbolos tabela = new TabelaSimbolos();
+        tabela.adicionar("a", Simbolo.Categoria.VARIAVEL, 1);
+        tabela.adicionar("b", Simbolo.Categoria.VARIAVEL, 1);
+        tabela.adicionar("c", Simbolo.Categoria.CONSTANTE, 1);
+        tabela.adicionar("d", Simbolo.Categoria.CONSTANTE, 1);
+        tabela.adicionar("e", Simbolo.Categoria.PROCEDURE, 1);
+        tabela.adicionar("f", Simbolo.Categoria.PROCEDURE, 1);
+        tabela.adicionar("g", Simbolo.Categoria.PARAMETRO, 1);
+        tabela.adicionar("h", Simbolo.Categoria.VARIAVEL, 2);
+        tabela.adicionar("i", Simbolo.Categoria.VARIAVEL, 2);
+        tabela.adicionar("j", Simbolo.Categoria.VARIAVEL, 2);
+
+        tabela.printaSimbolos();
+
+        tabela.atualizar("a", Simbolo.Categoria.PARAMETRO, 1);
+        tabela.atualizar("b", Simbolo.Categoria.PARAMETRO, 1);
+        tabela.atualizar("c", Simbolo.Categoria.VARIAVEL, 1);
+        tabela.atualizar("d", Simbolo.Categoria.VARIAVEL, 1);
+        tabela.atualizar("f", Simbolo.Categoria.VARIAVEL, 1);
+
+        tabela.printaSimbolos();
+
+        tabela.removerNivel(2);
+
+        tabela.printaSimbolos();
+
+        System.out.println(tabela.busca("z"));
+        System.out.println(tabela.busca("a"));
+        System.out.println(tabela.busca("b"));
+        System.out.println(tabela.busca("c"));
+
     }
 }

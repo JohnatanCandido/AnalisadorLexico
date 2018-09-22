@@ -12,7 +12,7 @@ PROGRAM testeproc2;
         z := z - 100;
         t := z * a;
         IF t > 100 THEN
-            CALL q
+            CALL
         ELSE
             WRITELN(t)
     END; (* fim de q*)
@@ -21,7 +21,7 @@ PROGRAM testeproc2;
         IF z > 100 THEN
             CALL q
         ELSE
-        WRITELN(z);
+            WRITELN(z);
     END; (* fim da p*)
     BEGIN (* programa principal*)
         READLN(x,y);

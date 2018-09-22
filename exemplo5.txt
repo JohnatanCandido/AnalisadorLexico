@@ -1,0 +1,11 @@
+PROGRAM testeproc5; (*teste TESTE *)
+    CONST A = 29;
+    BB = 49;
+    BEGIN
+        IF B=A THEN
+            L:=9+5
+        ELSE BEGIN
+            L:=9-5
+        END;
+    END
+.
