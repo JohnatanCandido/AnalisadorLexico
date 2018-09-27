@@ -1,4 +1,11 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
 
 public class Util {
 
@@ -13,7 +20,7 @@ public class Util {
 
     public static final List<String> estadosReconhecedores = Arrays.asList("q1", "q2", "q3", "q48", "q47", "q62");
     private static String[][] matrizTransicao = new String[alfabeto.size()][estados.size()];
-    public static Map<String, Integer> palavrasReservadas = new HashMap<>();
+    private static Map<String, Integer> palavrasReservadas = new HashMap<>();
     public static Map<String, Integer> simbolosEspeciais = new HashMap<>();
 
     static {
