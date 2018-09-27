@@ -656,20 +656,21 @@ public class Util {
             tokens.add(ParserConstants.PARSER_ERROR[topo]);
         else {
             topo -= ParserConstants.FIRST_NON_TERMINAL;
+            Integer next = pilha.isEmpty() ? null : pilha.pop();
 
             for (Integer expansao: pegaExpansoes(topo)) {
                 Integer producao = ParserConstants.PRODUCTIONS[expansao][0];
-                if (producao > 0 && producao < ParserConstants.FIRST_NON_TERMINAL) {
+                if (producao > 0 && producao < ParserConstants.FIRST_NON_TERMINAL)
                     tokens.add(ParserConstants.PARSER_ERROR[producao]);
-                } else if (!expandidos.contains(producao)) {
-                    if (producao == 0 && !pilha.isEmpty()) {
-                        if (pilha.get(pilha.size()-1) < ParserConstants.FIRST_NON_TERMINAL)
-                            tokens.add(ParserConstants.PARSER_ERROR[pilha.get(pilha.size()-1)]);
+                else if (!expandidos.contains(producao) && !pilha.isEmpty()) {
+                    if (producao == 0) {
+                        if (next != null && next < ParserConstants.FIRST_NON_TERMINAL)
+                            tokens.add(ParserConstants.PARSER_ERROR[next]);
                         else {
-                            topo = pilha.pop();
+                            topo = next;
                             tokens.addAll(getProducoes(topo, pilha, false));
                         }
-                    } else if (!pilha.isEmpty()){
+                    } else {
                         expandidos.add(producao);
                         tokens.addAll(getProducoes(producao, pilha, false));
                     }

@@ -54,10 +54,10 @@ public class Sintatico {
     }
 
     private static void fazAnaliseLexica() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Digite o número do exemplo: ");
-//        String n = scanner.nextLine().toLowerCase();
-//        scanner.close();
-        palavras = Lexico.getListaPalavrasReconhecidas(new File("exemplo" + 1 +".txt"));
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o número do exemplo: ");
+        String n = scanner.nextLine().toLowerCase();
+        scanner.close();
+        palavras = Lexico.getListaPalavrasReconhecidas(new File("exemplo" + n +".txt"));
     }
 }
