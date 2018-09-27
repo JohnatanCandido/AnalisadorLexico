@@ -3,12 +3,10 @@ import java.util.*;
 
 public class Sintatico {
 
-    private static Stack<Integer> pilha = new Stack<>();
-    private static Stack<Integer[]> palavras;
-
     public static void main(String[] args) {
         try {
-            fazAnaliseLexica(); // Pega lista de símbolos do analisador sintático
+            Stack<Integer> pilha = new Stack<>();
+            Stack<Integer[]> palavras = fazAnaliseLexica(); // Pega lista de símbolos do analisador sintático
             Integer[] simboloLinha = palavras.pop(); // Pega o próximo símbolo da entrada
 
             pilha.push(ParserConstants.START_SYMBOL); // Coloca o símbolo inicial na pilha
@@ -32,7 +30,7 @@ public class Sintatico {
 
                     if (idProducao != -1) { // Se encontrar
                         int[] retorno = ParserConstants.PRODUCTIONS[idProducao]; // Pega os símbolos da expansão
-                        empilha(retorno); // Empilha de trás para frente
+                        empilha(pilha, retorno); // Empilha de trás para frente
                     } else { // Se não encontrar
 
                         // Lança um erro dizendo quais símbolos deveriam ter sido encontrados
@@ -46,18 +44,18 @@ public class Sintatico {
         }
     }
 
-    private static void empilha(int[] lista) {
+    private static void empilha(Stack<Integer> pilha, int[] lista) {
         for (int i = lista.length - 1; i >= 0; i--) {
             if (lista[i] > 0)
                 pilha.add(lista[i]);
         }
     }
 
-    private static void fazAnaliseLexica() {
+    private static Stack<Integer[]> fazAnaliseLexica() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Digite o número do exemplo: ");
         String n = scanner.nextLine().toLowerCase();
         scanner.close();
-        palavras = Lexico.getListaPalavrasReconhecidas(new File("exemplo" + n +".txt"));
+        return Lexico.getListaPalavrasReconhecidas(new File("exemplo" + n +".txt"));
     }
 }
