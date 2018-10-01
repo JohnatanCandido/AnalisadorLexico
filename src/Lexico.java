@@ -16,22 +16,7 @@ public class Lexico {
         File file = new File("exemplo1.txt");
         try {
             new Lexico(file);
-        } catch(IllegalArgumentException e) {
-            e.printStackTrace();
-        }
-        System.out.print(palavrasReconhecidas);
-    }
-
-    private Lexico() {
-        String palavra = "";
-        try {
-            while (!palavra.equals("sair")) {
-                Scanner scanner = new Scanner(System.in);
-                System.out.print(">> ");
-                palavra = scanner.nextLine().toLowerCase();
-                identificaPalavra(palavra, 1);
-            }
-        } catch (ErroLexico e) {
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
         System.out.print(palavrasReconhecidas);
@@ -72,7 +57,25 @@ public class Lexico {
         return pilhaPalavrasReconhecidas;
     }
 
-    private static void identificaPalavra(String linha, Integer num_linha) throws ErroLexico{
+    public static Stack<Integer[]> getListaPalavrasReconhecidas(String[] texto) {
+        palavrasReconhecidas.clear();
+        int linha = 0;
+        try {
+            while (linha < texto.length) {
+                if (!texto[linha].trim().equals(""))
+                    identificaPalavra(texto[linha].trim().toLowerCase(), linha + 1);
+                linha++;
+            }
+        } catch (ErroLexico e) {
+            throw new IllegalArgumentException("Erro na linha " + (linha + 1) + "\n" + e.getMessage());
+        }
+        Stack<Integer[]> pilhaPalavrasReconhecidas = new Stack<>();
+        for (int i = palavrasReconhecidas.size() - 1; i >= 0; i--)
+            pilhaPalavrasReconhecidas.push(palavrasReconhecidas.get(i));
+        return pilhaPalavrasReconhecidas;
+    }
+
+    private static void identificaPalavra(String linha, Integer num_linha) throws ErroLexico {
         try {
             String estadoAtual = "q0";
             StringBuffer buffer = new StringBuffer();
@@ -87,9 +90,9 @@ public class Lexico {
                     if (verificaPalavraValida(estadoAtual, buffer, letra)) {
                         try {
                             if (letra == '.' && i < linha.length() - 1) {
-                               String possivelNumero = buffer.toString() + String.valueOf(letra) + String.valueOf(linha.charAt(i+1));
-                               Double.valueOf(possivelNumero);
-                               throw new ErroLexico("Não permite números decimais!");
+                                String possivelNumero = buffer.toString() + String.valueOf(letra) + String.valueOf(linha.charAt(i + 1));
+                                Double.valueOf(possivelNumero);
+                                throw new ErroLexico("Não permite números decimais!");
                             }
                             throw new NumberFormatException();
                         } catch (NumberFormatException excepttion) {
@@ -118,8 +121,8 @@ public class Lexico {
     private static boolean verificaPalavraValida(String estadoAtual, StringBuffer buffer, char letra) {
         return Util.estadosReconhecedores.contains(estadoAtual)
                 && (letra == ' '
-                    || Util.simbolosEspeciais.containsKey(String.valueOf(letra))
-                    || Util.simbolosEspeciais.containsKey(buffer.toString()));
+                || Util.simbolosEspeciais.containsKey(String.valueOf(letra))
+                || Util.simbolosEspeciais.containsKey(buffer.toString()));
     }
 
     private static void pegaCodigoPalavraReconhecida(StringBuffer buffer, int linha) throws ErroLexico {
