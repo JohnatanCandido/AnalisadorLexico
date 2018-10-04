@@ -57,7 +57,7 @@ public class Lexico {
         return pilhaPalavrasReconhecidas;
     }
 
-    public static Stack<Integer[]> getListaPalavrasReconhecidas(String[] texto) {
+    public static Stack<Integer[]> getListaPalavrasReconhecidas(String[] texto) throws ErroLexico {
         palavrasReconhecidas.clear();
         int linha = 0;
         try {
@@ -67,7 +67,7 @@ public class Lexico {
                 linha++;
             }
         } catch (ErroLexico e) {
-            throw new IllegalArgumentException("Erro na linha " + (linha + 1) + "\n" + e.getMessage());
+            throw new ErroLexico("Erro na linha " + (linha + 1) + "\n" + e.getMessage());
         }
         Stack<Integer[]> pilhaPalavrasReconhecidas = new Stack<>();
         for (int i = palavrasReconhecidas.size() - 1; i >= 0; i--)

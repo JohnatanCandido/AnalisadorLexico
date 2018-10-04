@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class TelaController {
 
@@ -7,11 +8,14 @@ public class TelaController {
     TextArea texto;
 
     @FXML
+    TextField retorno;
+
+    @FXML
     public void compilar() {
         try {
-            Sintatico.fazAnaliseSintatica(texto.getText().split("\n"));
+            retorno.setText(Sintatico.fazAnaliseSintatica(texto.getText().split("\n")));
         } catch (ErroLexico | ErroSintatico e) {
-            e.printStackTrace();
+            retorno.setText(e.getMessage());
         }
     }
 

@@ -13,7 +13,7 @@ public class Sintatico {
         }
     }
 
-    public static void fazAnaliseSintatica(String[] texto) throws ErroLexico, ErroSintatico{
+    public static String fazAnaliseSintatica(String[] texto) throws ErroLexico, ErroSintatico{
         Stack<Integer> pilha = new Stack<>();
 
         // Pega lista de símbolos do analisador sintático
@@ -52,6 +52,7 @@ public class Sintatico {
             }
         }
         System.out.println("Término da execução");
+        return "Análise completa!";
     }
 
     private static void empilha(Stack<Integer> pilha, int[] lista) {
@@ -69,7 +70,7 @@ public class Sintatico {
         return Lexico.getListaPalavrasReconhecidas(new File("exemplo" + n +".txt"));
     }
 
-    private static Stack<Integer[]> fazAnaliseLexica(String[] texto) {
+    private static Stack<Integer[]> fazAnaliseLexica(String[] texto) throws ErroLexico{
         return Lexico.getListaPalavrasReconhecidas(texto);
     }
 }
