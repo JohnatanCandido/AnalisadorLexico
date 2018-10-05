@@ -710,6 +710,9 @@ public class Util {
         tabela.adicionar("i", Simbolo.Categoria.VARIAVEL, 2);
         tabela.adicionar("j", Simbolo.Categoria.VARIAVEL, 2);
 
+        tabela.adicionar("teste", Simbolo.Categoria.VARIAVEL, 3);
+        tabela.adicionar("teset", Simbolo.Categoria.VARIAVEL, 3);
+
         tabela.printaSimbolos();
 
         tabela.atualizar("a", Simbolo.Categoria.PARAMETRO, 1);
@@ -718,8 +721,10 @@ public class Util {
         tabela.atualizar("d", Simbolo.Categoria.VARIAVEL, 1);
         tabela.atualizar("f", Simbolo.Categoria.VARIAVEL, 1);
 
+        System.out.println("Alterando os valores de a, b, c, d, f");
         tabela.printaSimbolos();
 
+        System.out.println("Removendo os valores h, i, j");
         tabela.removerNivel(2);
 
         tabela.printaSimbolos();

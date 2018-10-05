@@ -63,6 +63,6 @@ public class Simbolo {
 
     @Override
     public String toString() {
-        return nome + " - " + categoria.valor + " - " + nivel + " - " + geralA + " - " + geralB;
+        return String.format("%2s, %10s, %2d, %20s, %20s", nome, categoria.valor, nivel, geralA, geralB);
     }
 }

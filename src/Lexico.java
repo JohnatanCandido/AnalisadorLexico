@@ -4,39 +4,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Stack;
 
 public class Lexico {
 
     private static List<Integer[]> palavrasReconhecidas = new ArrayList<>();
-
-    public static void main(String[] args) {
-
-        File file = new File("exemplo1.txt");
-        try {
-            new Lexico(file);
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
-        System.out.print(palavrasReconhecidas);
-    }
-
-    private Lexico(File file) {
-        int linha = 1;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String st;
-            while ((st = br.readLine()) != null) {
-                if (!st.trim().equals("")) {
-                    identificaPalavra(st.trim().toLowerCase(), linha);
-                }
-                linha++;
-            }
-        } catch (ErroLexico | IOException e) {
-            throw new IllegalArgumentException("Erro na linha " + linha + "\n" + e.getMessage());
-        }
-    }
 
     public static Stack<Integer[]> getListaPalavrasReconhecidas(File file) {
         int linha = 1;
