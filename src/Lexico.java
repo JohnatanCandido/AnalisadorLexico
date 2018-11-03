@@ -8,9 +8,9 @@ import java.util.Stack;
 
 public class Lexico {
 
-    private static List<Integer[]> palavrasReconhecidas = new ArrayList<>();
+    private static List<Object[]> palavrasReconhecidas = new ArrayList<>();
 
-    public static Stack<Integer[]> getListaPalavrasReconhecidas(File file) {
+    public static Stack<Object[]> getListaPalavrasReconhecidas(File file) {
         int linha = 1;
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -23,13 +23,13 @@ public class Lexico {
         } catch (ErroLexico | IOException e) {
             throw new IllegalArgumentException("Erro na linha " + linha + "\n" + e.getMessage());
         }
-        Stack<Integer[]> pilhaPalavrasReconhecidas = new Stack<>();
+        Stack<Object[]> pilhaPalavrasReconhecidas = new Stack<>();
         for (int i = palavrasReconhecidas.size() - 1; i >= 0; i--)
             pilhaPalavrasReconhecidas.push(palavrasReconhecidas.get(i));
         return pilhaPalavrasReconhecidas;
     }
 
-    public static Stack<Integer[]> getListaPalavrasReconhecidas(String[] texto) throws ErroLexico {
+    public static Stack<Object[]> getListaPalavrasReconhecidas(String[] texto) throws ErroLexico {
         palavrasReconhecidas.clear();
         int linha = 0;
         try {
@@ -41,7 +41,7 @@ public class Lexico {
         } catch (ErroLexico e) {
             throw new ErroLexico("Erro na linha " + (linha + 1) + "\n" + e.getMessage());
         }
-        Stack<Integer[]> pilhaPalavrasReconhecidas = new Stack<>();
+        Stack<Object[]> pilhaPalavrasReconhecidas = new Stack<>();
         for (int i = palavrasReconhecidas.size() - 1; i >= 0; i--)
             pilhaPalavrasReconhecidas.push(palavrasReconhecidas.get(i));
         return pilhaPalavrasReconhecidas;
@@ -101,7 +101,7 @@ public class Lexico {
         Integer codigo = Util.pegaCodigoDescricao(buffer.toString());
         if (codigo > 0) {
 //            System.out.println(buffer.toString());
-            palavrasReconhecidas.add(new Integer[]{codigo, linha});
+            palavrasReconhecidas.add(new Object[]{codigo, linha, buffer.toString()});
         }
     }
 }

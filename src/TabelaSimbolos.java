@@ -1,26 +1,46 @@
 public class TabelaSimbolos {
 
-    private final int tableSize = 25147;
-    private Simbolo[] simbolos = new Simbolo[tableSize];
+    private final int tableSize;
+    private Simbolo[] simbolos;
 
-    public TabelaSimbolos() {}
+    public TabelaSimbolos() {
+        tableSize = 25147;
+        simbolos = new Simbolo[tableSize];
+    }
 
-    public void adicionar(String nome, Simbolo.Categoria categoria, Integer nivel) {
-        Simbolo simbolo = new Simbolo(nome, categoria, nivel);
+    public void insere(String nome, Simbolo.Categoria categoria, Integer nivel, Object geralA, Object geralB) throws ErroSemantico {
+        Simbolo simbolo = new Simbolo(nome, categoria, nivel, geralA, geralB);
         int index = hash(nome);
-        if (simbolos[index] != null)
-            throw new IllegalArgumentException("Colisão");
+        if (simbolos[index] != null) {
+            Simbolo symbol = simbolos[index];
+            while (symbol.getProximo() != null) {
+                if (symbol.getNome().equals(nome) && symbol.getNivel().equals(nivel))
+                    throw new ErroSemantico("Nome " + nome + " já declarado.");
+                symbol = symbol.getProximo();
+            }
+            symbol.setProximo(simbolo);
+        }
         simbolos[index] = simbolo;
     }
 
-    public String busca(String nome) {
+    public Simbolo busca(String nome) throws ErroSemantico {
         Simbolo simbolo = simbolos[hash(nome)];
-        return simbolo != null ? simbolo.toString() : "Não foi possível encontrar o símbolo \"" + nome +"\"";
+        if (simbolo != null)
+            return simbolo;
+        throw new ErroSemantico("Não foi possível encontrar o símbolo \"" + nome +"\"");
     }
 
-//    public void remover(String nome) {
-////        simbolos[hash(nome)] = null;
-////    }
+    public Simbolo buscaParametro(String nome) throws ErroSemantico {
+        Simbolo simbolo = busca(nome);
+        while (!simbolo.getNome().equals(nome) && !simbolo.getCategoria().equals(Simbolo.Categoria.PARAMETRO)) {
+            simbolo = simbolo.getProximo();
+        }
+        return simbolo;
+    }
+
+    public void remover(String nome) {
+        simbolos[hash(nome)] = null;
+    }
 
     public void atualizar(String nome, Simbolo.Categoria categoria, Integer nivel) {
         Simbolo simbolo = simbolos[hash(nome)];
@@ -28,15 +48,6 @@ public class TabelaSimbolos {
             simbolo.atualizar(categoria, nivel);
         else
             System.out.println("O simbolo " + nome + " não existe!");
-    }
-
-    public void printaSimbolos() {
-        for (Simbolo simbolo: simbolos) {
-            if (simbolo != null)
-                System.out.println(simbolo.toString());
-        }
-        System.out.println("-------------------------------------------------------------------------------");
-        System.out.println();
     }
 
     public void removerNivel(Integer nivel) {

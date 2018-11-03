@@ -696,43 +696,4 @@ public class Util {
         }
         return expansoes;
     }
-
-    public static void main(String[] args) {
-        TabelaSimbolos tabela = new TabelaSimbolos();
-        tabela.adicionar("a", Simbolo.Categoria.VARIAVEL, 1);
-        tabela.adicionar("b", Simbolo.Categoria.VARIAVEL, 1);
-        tabela.adicionar("c", Simbolo.Categoria.CONSTANTE, 1);
-        tabela.adicionar("d", Simbolo.Categoria.CONSTANTE, 1);
-        tabela.adicionar("e", Simbolo.Categoria.PROCEDURE, 1);
-        tabela.adicionar("f", Simbolo.Categoria.PROCEDURE, 1);
-        tabela.adicionar("g", Simbolo.Categoria.PARAMETRO, 1);
-        tabela.adicionar("h", Simbolo.Categoria.VARIAVEL, 2);
-        tabela.adicionar("i", Simbolo.Categoria.VARIAVEL, 2);
-        tabela.adicionar("j", Simbolo.Categoria.VARIAVEL, 2);
-
-        tabela.adicionar("teste", Simbolo.Categoria.VARIAVEL, 3);
-        tabela.adicionar("teset", Simbolo.Categoria.VARIAVEL, 3);
-
-        tabela.printaSimbolos();
-
-        tabela.atualizar("a", Simbolo.Categoria.PARAMETRO, 1);
-        tabela.atualizar("b", Simbolo.Categoria.PARAMETRO, 1);
-        tabela.atualizar("c", Simbolo.Categoria.VARIAVEL, 1);
-        tabela.atualizar("d", Simbolo.Categoria.VARIAVEL, 1);
-        tabela.atualizar("f", Simbolo.Categoria.VARIAVEL, 1);
-
-        System.out.println("Alterando os valores de a, b, c, d, f");
-        tabela.printaSimbolos();
-
-        System.out.println("Removendo os valores h, i, j");
-        tabela.removerNivel(2);
-
-        tabela.printaSimbolos();
-
-        System.out.println(tabela.busca("z"));
-        System.out.println(tabela.busca("a"));
-        System.out.println(tabela.busca("b"));
-        System.out.println(tabela.busca("c"));
-
-    }
 }

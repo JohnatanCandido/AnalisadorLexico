@@ -14,7 +14,7 @@ public class TelaController {
     public void compilar() {
         try {
             retorno.setText(Sintatico.fazAnaliseSintatica(texto.getText().split("\n")));
-        } catch (ErroLexico | ErroSintatico e) {
+        } catch (ErroLexico | ErroSintatico | ErroSemantico e) {
             retorno.setText(e.getMessage());
         }
     }

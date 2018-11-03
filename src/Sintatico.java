@@ -8,19 +8,20 @@ public class Sintatico {
     public static void main(String[] args) {
         try {
             fazAnaliseSintatica(null);
-        } catch (ErroLexico | ErroSintatico e) {
+        } catch (ErroLexico | ErroSintatico | ErroSemantico e) {
             e.printStackTrace();
         }
     }
 
-    public static String fazAnaliseSintatica(String[] texto) throws ErroLexico, ErroSintatico{
+    public static String fazAnaliseSintatica(String[] texto) throws ErroLexico, ErroSintatico, ErroSemantico {
         Stack<Integer> pilha = new Stack<>();
+        String ultimaPalavra = "$";
 
         // Pega lista de símbolos do analisador sintático
-        Stack<Integer[]> palavras = texto == null ? fazAnaliseLexica() : fazAnaliseLexica(texto);
+        Stack<Object[]> palavras = texto == null ? fazAnaliseLexica() : fazAnaliseLexica(texto);
 
         // Pega o próximo símbolo da entrada
-        Integer[] simboloLinha = palavras.pop();
+        Object[] simboloLinha = palavras.pop();
 
         pilha.push(ParserConstants.START_SYMBOL); // Coloca o símbolo inicial na pilha
         while(!pilha.isEmpty()) { // Enquanto a pilha não estiver vazia
@@ -28,26 +29,29 @@ public class Sintatico {
 
             if (topo < ParserConstants.FIRST_NON_TERMINAL) { // Se for terminal
                 if (topo.equals(simboloLinha[0])) { // Verifica se é igual ao simbolo de entrada atual
-                    System.out.println(ParserConstants.PARSER_ERROR[simboloLinha[0]]);
+//                    System.out.println(ParserConstants.PARSER_ERROR[(int) simboloLinha[0]]);
+                    ultimaPalavra = simboloLinha[2].toString();
 
                     if (!palavras.isEmpty()) // Se ainda tiver mais simbolos a serem verificados
                         simboloLinha = palavras.pop(); // Pega o próximo símbolo de entrada
 
                 } else { // Se não for lança um erro de que não era o símbolo esperado
-                    throw new ErroSintatico(simboloLinha[1], ParserConstants.PARSER_ERROR[topo]);
+                    throw new ErroSintatico(simboloLinha[1].toString(), ParserConstants.PARSER_ERROR[topo]);
                 }
             } else { // Se não for terminal
 
-                // Busca na tabela de parsing
-                int idProducao = ParserConstants.PARSER_TABLE[topo-ParserConstants.FIRST_NON_TERMINAL][simboloLinha[0] - 1];
+                if (topo < ParserConstants.FIRST_SEMANTIC_ACTION) {
+                    // Busca na tabela de parsing
+                    int idProducao = ParserConstants.PARSER_TABLE[topo-ParserConstants.FIRST_NON_TERMINAL][(int) simboloLinha[0] - 1];
 
-                if (idProducao != -1) { // Se encontrar
-                    int[] retorno = ParserConstants.PRODUCTIONS[idProducao]; // Pega os símbolos da expansão
-                    empilha(pilha, retorno); // Empilha de trás para frente
-                } else { // Se não encontrar
-
-                    // Lança um erro dizendo quais símbolos deveriam ter sido encontrados
-                    throw new ErroSintatico(simboloLinha[1], Util.getMensagemTokensEsperados(topo, pilha));
+                    if (idProducao != -1) { // Se encontrar
+                        int[] retorno = ParserConstants.PRODUCTIONS[idProducao]; // Pega os símbolos da expansão
+                        empilha(pilha, retorno); // Empilha de trás para frente
+                    } else { // Se não encontrar lança um erro dizendo quais símbolos deveriam ter sido encontrados
+                        throw new ErroSintatico(simboloLinha[1].toString(), Util.getMensagemTokensEsperados(topo, pilha));
+                    }
+                } else {
+                    Semantico.trataAcaoSemantica(topo, ultimaPalavra);
                 }
             }
         }
@@ -62,15 +66,15 @@ public class Sintatico {
         }
     }
 
-    private static Stack<Integer[]> fazAnaliseLexica() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite o número do exemplo: ");
-        String n = scanner.nextLine().toLowerCase();
-        scanner.close();
-        return Lexico.getListaPalavrasReconhecidas(new File("exemplo" + n +".txt"));
+    private static Stack<Object[]> fazAnaliseLexica() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Digite o número do exemplo: ");
+//        String n = scanner.nextLine().toLowerCase();
+//        scanner.close();
+        return Lexico.getListaPalavrasReconhecidas(new File("exemplo1.txt"));
     }
 
-    private static Stack<Integer[]> fazAnaliseLexica(String[] texto) throws ErroLexico{
+    private static Stack<Object[]> fazAnaliseLexica(String[] texto) throws ErroLexico{
         return Lexico.getListaPalavrasReconhecidas(texto);
     }
 }
