@@ -1,6 +1,6 @@
 PROGRAM testeproc1; (*teste TESTE *)
     VAR
-        x, y, z :INTEGER;
+        x, y, z :INTEGER; 
 
     PROCEDURE p;
     VAR
