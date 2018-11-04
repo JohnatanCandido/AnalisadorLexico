@@ -52,7 +52,7 @@ public class Lexico {
             String estadoAtual = "q0";
             StringBuffer buffer = new StringBuffer();
             for (int i = 0; i <= linha.length(); i++) {
-                char letra = '¨';
+                char letra = '_';
                 try {
                     letra = linha.charAt(i);
                     estadoAtual = Util.pegaProximoEstado(letra, estadoAtual);

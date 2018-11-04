@@ -9,23 +9,26 @@
     <list default="true" id="fb69bc44-c873-47e9-ace3-151662182a21" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exemplo1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exemplo1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroLexico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroLexico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroSemantico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroSemantico.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroSintatico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/ErroSintatico.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Lexico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Lexico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Maquina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Maquina.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/ParserConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/ParserConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Simbolo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Simbolo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Semantico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Semantico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Simbolo$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Simbolo$Categoria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Simbolo$Categoria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Simbolo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Simbolo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Sintatico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Sintatico.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/TabelaSimbolos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/TabelaSimbolos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/TelaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/TelaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnalisadorLexico/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnalisadorLexico/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ErroSintatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ErroSintatico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hipotetica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hipotetica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lexico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lexico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParserConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Simbolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simbolo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sintatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sintatico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maquina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Semantico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Semantico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TabelaSimbolos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TabelaSimbolos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TelaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TelaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -97,14 +100,46 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1542390689">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="4471" />
+          <entry key="txt" value="913" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="4471" />
+          <entry key="PLAIN_TEXT" value="913" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="671" column="25" selection-start-line="671" selection-start-column="25" selection-end-line="671" selection-end-column="25" />
+            <state relative-caret-position="670">
+              <caret line="729" column="30" lean-forward="true" selection-start-line="729" selection-start-column="30" selection-end-line="729" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="initializer##0;class#Util#0" />
@@ -113,61 +148,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Semantico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1668">
-              <caret line="715" column="57" selection-start-line="715" selection-start-column="57" selection-end-line="715" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#18801#18802#0" expanded="true" />
-                <element signature="e#18854#18855#0" expanded="true" />
-                <element signature="e#19900#19901#0" expanded="true" />
-                <element signature="e#19953#19954#0" expanded="true" />
-                <element signature="e#23054#23055#0" expanded="true" />
-                <element signature="e#23118#23119#0" expanded="true" />
-                <element signature="e#26420#26421#0" expanded="true" />
-                <element signature="e#26484#26485#0" expanded="true" />
-                <element signature="e#26553#26554#0" expanded="true" />
-                <element signature="e#26617#26618#0" expanded="true" />
-                <element signature="e#26686#26687#0" expanded="true" />
-                <element signature="e#26750#26751#0" expanded="true" />
-                <element signature="e#26819#26820#0" expanded="true" />
-                <element signature="e#26883#26884#0" expanded="true" />
-                <element signature="e#26952#26953#0" expanded="true" />
-                <element signature="e#27016#27017#0" expanded="true" />
-                <element signature="e#27085#27086#0" expanded="true" />
-                <element signature="e#27149#27150#0" expanded="true" />
-                <element signature="e#27280#27281#0" expanded="true" />
-                <element signature="e#27344#27345#0" expanded="true" />
-                <element signature="e#27454#27455#0" expanded="true" />
-                <element signature="e#27518#27519#0" expanded="true" />
-                <element signature="e#27633#27634#0" expanded="true" />
-                <element signature="e#27697#27698#0" expanded="true" />
-                <element signature="e#27805#27806#0" expanded="true" />
-                <element signature="e#27869#27870#0" expanded="true" />
-                <element signature="e#27988#27989#0" expanded="true" />
-                <element signature="e#28052#28053#0" expanded="true" />
-                <element signature="e#28165#28166#0" expanded="true" />
-                <element signature="e#28229#28230#0" expanded="true" />
-                <element signature="e#28338#28339#0" expanded="true" />
-                <element signature="e#28402#28403#0" expanded="true" />
-                <element signature="e#28527#28528#0" expanded="true" />
-                <element signature="e#28593#28594#0" expanded="true" />
-                <element signature="e#28701#28702#0" expanded="true" />
-                <element signature="e#28765#28766#0" expanded="true" />
-                <element signature="e#28895#28896#0" expanded="true" />
-                <element signature="e#28933#28934#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Sintatico.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="250">
+              <caret line="253" column="34" lean-forward="true" selection-start-line="253" selection-start-column="34" selection-end-line="253" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,19 +161,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ParserConstants.java">
+        <entry file="file://$PROJECT_DIR$/src/Maquina.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TabelaSimbolos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+            <state relative-caret-position="357">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -196,20 +172,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exemplo1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state relative-caret-position="612">
+              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Simbolo.java">
+        <entry file="file://$PROJECT_DIR$/src/TabelaSimbolos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+            <state relative-caret-position="189">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
-                <element signature="e#1651#1652#0" expanded="true" />
-                <element signature="e#1693#1694#0" expanded="true" />
+                <element signature="e#1844#1845#0" expanded="true" />
+                <element signature="e#1887#1888#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Hipotetica.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="233" column="35" selection-start-line="233" selection-start-column="35" selection-end-line="233" selection-end-column="35" />
+              <folding>
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#866#867#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -227,26 +216,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>String[]</find>
-      <find>101</find>
-      <find>para</find>
-      <find>armz</find>
-      <find>contexto</find>
-      <find>tipo</find>
-      <find>.add(0)</find>
-      <find>114</find>
-      <find>add</find>
-      <find>comando</find>
-      <find>para&quot;</find>
-      <find>dsvf</find>
-      <find>codigoInterm</find>
-      <find>pilha_procedure.pus</find>
-      <find>expressão</find>
-      <find>dsvs</find>
-      <find>pilha_procedure</find>
-      <find>codigoInterm.size() + 1</find>
-      <find>crvl</find>
-      <find>call</find>
       <find>retu</find>
       <find>amen</find>
       <find>amen&quot;</find>
@@ -257,6 +226,26 @@
       <find>9, 68, 11</find>
       <find>132</find>
       <find>pilha_case</find>
+      <find>public boolean</find>
+      <find>impr</find>
+      <find>imprl&quot;</find>
+      <find>exibe</find>
+      <find>para&quot;</find>
+      <find>input</find>
+      <find>//ret</find>
+      <find>imprime</find>
+      <find>y</find>
+      <find>armz&quot;</find>
+      <find>writeln</find>
+      <find>for</find>
+      <find>Writeln</find>
+      <find>dsvs&quot;</find>
+      <find>procedure</find>
+      <find>copi</find>
+      <find>insere</find>
+      <find>call</find>
+      <find>.PROCEDURE</find>
+      <find>armz</find>
     </findStrings>
     <replaceStrings>
       <replace>topo</replace>
@@ -297,19 +286,20 @@
         <option value="$PROJECT_DIR$/src/Tela.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Tela.fxml" />
-        <option value="$PROJECT_DIR$/src/Util.java" />
         <option value="$PROJECT_DIR$/src/Pilha.java" />
-        <option value="$PROJECT_DIR$/src/Maquina.java" />
         <option value="$PROJECT_DIR$/src/ErroSemantico.java" />
         <option value="$PROJECT_DIR$/src/ErroSintatico.java" />
-        <option value="$PROJECT_DIR$/src/Lexico.java" />
         <option value="$PROJECT_DIR$/src/TelaController.java" />
         <option value="$PROJECT_DIR$/src/Sintatico.java" />
         <option value="$PROJECT_DIR$/src/Simbolo.java" />
-        <option value="$PROJECT_DIR$/src/TabelaSimbolos.java" />
         <option value="$PROJECT_DIR$/src/ParserConstants.java" />
-        <option value="$PROJECT_DIR$/exemplo1.txt" />
+        <option value="$PROJECT_DIR$/src/Lexico.java" />
+        <option value="$PROJECT_DIR$/src/Util.java" />
+        <option value="$PROJECT_DIR$/src/TabelaSimbolos.java" />
+        <option value="$PROJECT_DIR$/src/Maquina.java" />
+        <option value="$PROJECT_DIR$/src/Hipotetica.java" />
         <option value="$PROJECT_DIR$/src/Semantico.java" />
+        <option value="$PROJECT_DIR$/exemplo1.txt" />
       </list>
     </option>
   </component>
@@ -320,10 +310,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="404" />
-    <option name="y" value="-13" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="871" />
+    <option name="y" value="-25" />
+    <option name="width" value="1355" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -331,74 +321,30 @@
         <expanded-state>
           <State />
           <State>
-            <id>Abstraction issuesJava</id>
-          </State>
-          <State>
             <id>Android</id>
           </State>
           <State>
-            <id>Code style issuesJava</id>
+            <id>IconsUsabilityLintAndroid</id>
           </State>
           <State>
-            <id>CorrectnessLintAndroid</id>
+            <id>Internationalization</id>
           </State>
           <State>
-            <id>Declaration redundancyJava</id>
+            <id>InternationalizationJava</id>
           </State>
           <State>
-            <id>Error handlingJava</id>
-          </State>
-          <State>
-            <id>Groovy</id>
-          </State>
-          <State>
-            <id>ImportsJava</id>
-          </State>
-          <State>
-            <id>Inheritance issuesJava</id>
+            <id>InternationalizationLintAndroid</id>
           </State>
           <State>
             <id>Java</id>
           </State>
           <State>
-            <id>JavaFX</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
             <id>LintAndroid</id>
-          </State>
-          <State>
-            <id>LoggingJava</id>
-          </State>
-          <State>
-            <id>MessagesCorrectnessLintAndroid</id>
-          </State>
-          <State>
-            <id>PerformanceLintAndroid</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsGroovy</id>
-          </State>
-          <State>
-            <id>Redundant constructsKotlin</id>
-          </State>
-          <State>
-            <id>Spelling</id>
-          </State>
-          <State>
-            <id>StyleGroovy</id>
           </State>
           <State>
             <id>UsabilityLintAndroid</id>
           </State>
         </expanded-state>
-        <selected-state>
-          <State>
-            <id>WeakerAccess</id>
-          </State>
-        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -407,6 +353,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -423,13 +370,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540515906166" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541340369493" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -570,10 +515,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1532738" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.309795" />
       <window_info id="Structure" order="1" show_stripe_button="false" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -582,11 +527,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924126" weight="0.52131146" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924126" weight="0.46854663" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.32786885" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.3275488" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007587" side_tool="true" weight="0.6666667" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295082" />
@@ -599,40 +544,26 @@
       <window_info anchor="right" id="Maven Projects" order="6" show_stripe_button="false" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32980332" />
-      <window_info anchor="right" id="Debug" order="9" weight="0.34039333" />
+      <window_info active="true" anchor="right" id="Debug" order="9" visible="true" weight="0.49253732" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15476191" />
-      <window_info id="Structure" order="1" show_stripe_button="false" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6803279" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.32786885" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295082" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" show_stripe_button="false" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" show_stripe_button="false" weight="0.32980332" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32980332" />
-      <window_info anchor="right" id="Debug" order="9" weight="0.23827533" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Hipotetica.java</url>
+          <line>382</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -640,6 +571,21 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>simbolos[i] != null &amp;&amp; simbolos[i].getNome().equals(&quot;i&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>simbolos[i].getNome().equals(&quot;i&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nome.equals(&quot;i&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>codigoInterm.size() == 12</expression-string>
         <language-id>JAVA</language-id>
@@ -662,6 +608,21 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>AI.AI[p]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>AI.AI[p].op2</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tabelaSimbolos.busca(nome)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>procedures</expression-string>
         <language-id>JAVA</language-id>
@@ -692,38 +653,11 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>ParserConstants.PARSER_TABLE[next-ParserConstants.FIRST_NON_TERMINAL]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ParserConstants.PARSER_TABLE[topo-ParserConstants.FIRST_NON_TERMINAL]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ParserConstants.PARSER_TABLE[topo-ParserConstants.FIRST_NON_TERMINAL][simboloLinha[0] - 1]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="3798" column="30" selection-start-line="3798" selection-start-column="30" selection-end-line="3798" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/function/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Arrays.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/function/Predicate.java" />
     <entry file="file://$PROJECT_DIR$/src/Teste.java" />
     <entry file="file://$PROJECT_DIR$/src/exemplo2.txt" />
     <entry file="file://$PROJECT_DIR$/src/ScannerConstants.java" />
@@ -752,13 +686,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="359" column="25" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Map.java" />
     <entry file="file://$PROJECT_DIR$/exemplo6.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -795,13 +723,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tela.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/TextInputControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="347" column="35" selection-start-line="347" selection-start-column="35" selection-end-line="347" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -824,31 +746,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Maquina.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="396" column="25" selection-start-line="396" selection-start-column="25" selection-end-line="396" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="3098" column="26" lean-forward="true" selection-start-line="3098" selection-start-column="26" selection-end-line="3098" selection-end-column="26" />
-          <folding>
-            <element signature="e#121727#121728#0" expanded="true" />
-            <element signature="e#121769#121770#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Integer.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/String.java" />
     <entry file="file://$PROJECT_DIR$/src/ErroLexico.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -882,53 +781,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-417">
-          <caret line="164" column="11" selection-start-line="164" selection-start-column="11" selection-end-line="164" selection-end-column="11" />
-          <folding>
-            <element signature="e#6283#6284#0" expanded="true" />
-            <element signature="e#6351#6352#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lexico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-237">
-          <caret line="36" column="52" lean-forward="true" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TabelaSimbolos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Simbolo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-          <folding>
-            <element signature="e#1651#1652#0" expanded="true" />
-            <element signature="e#1693#1694#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="671" column="25" selection-start-line="671" selection-start-column="25" selection-end-line="671" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="initializer##0;class#Util#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/src/Sintatico.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -939,64 +792,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/StackOverflowError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+          <folding>
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Simbolo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+          <folding>
+            <element signature="e#1651#1652#0" expanded="true" />
+            <element signature="e#1693#1694#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ParserConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
-          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="475" column="17" selection-start-line="475" selection-start-column="17" selection-end-line="475" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="729" column="30" lean-forward="true" selection-start-line="729" selection-start-column="30" selection-end-line="729" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="initializer##0;class#Util#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Maquina.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TabelaSimbolos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#1844#1845#0" expanded="true" />
+            <element signature="e#1887#1888#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exemplo1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="612">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Semantico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1668">
-          <caret line="715" column="57" selection-start-line="715" selection-start-column="57" selection-end-line="715" selection-end-column="57" />
+        <state relative-caret-position="250">
+          <caret line="253" column="34" lean-forward="true" selection-start-line="253" selection-start-column="34" selection-end-line="253" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#18801#18802#0" expanded="true" />
-            <element signature="e#18854#18855#0" expanded="true" />
-            <element signature="e#19900#19901#0" expanded="true" />
-            <element signature="e#19953#19954#0" expanded="true" />
-            <element signature="e#23054#23055#0" expanded="true" />
-            <element signature="e#23118#23119#0" expanded="true" />
-            <element signature="e#26420#26421#0" expanded="true" />
-            <element signature="e#26484#26485#0" expanded="true" />
-            <element signature="e#26553#26554#0" expanded="true" />
-            <element signature="e#26617#26618#0" expanded="true" />
-            <element signature="e#26686#26687#0" expanded="true" />
-            <element signature="e#26750#26751#0" expanded="true" />
-            <element signature="e#26819#26820#0" expanded="true" />
-            <element signature="e#26883#26884#0" expanded="true" />
-            <element signature="e#26952#26953#0" expanded="true" />
-            <element signature="e#27016#27017#0" expanded="true" />
-            <element signature="e#27085#27086#0" expanded="true" />
-            <element signature="e#27149#27150#0" expanded="true" />
-            <element signature="e#27280#27281#0" expanded="true" />
-            <element signature="e#27344#27345#0" expanded="true" />
-            <element signature="e#27454#27455#0" expanded="true" />
-            <element signature="e#27518#27519#0" expanded="true" />
-            <element signature="e#27633#27634#0" expanded="true" />
-            <element signature="e#27697#27698#0" expanded="true" />
-            <element signature="e#27805#27806#0" expanded="true" />
-            <element signature="e#27869#27870#0" expanded="true" />
-            <element signature="e#27988#27989#0" expanded="true" />
-            <element signature="e#28052#28053#0" expanded="true" />
-            <element signature="e#28165#28166#0" expanded="true" />
-            <element signature="e#28229#28230#0" expanded="true" />
-            <element signature="e#28338#28339#0" expanded="true" />
-            <element signature="e#28402#28403#0" expanded="true" />
-            <element signature="e#28527#28528#0" expanded="true" />
-            <element signature="e#28593#28594#0" expanded="true" />
-            <element signature="e#28701#28702#0" expanded="true" />
-            <element signature="e#28765#28766#0" expanded="true" />
-            <element signature="e#28895#28896#0" expanded="true" />
-            <element signature="e#28933#28934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hipotetica.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="233" column="35" selection-start-line="233" selection-start-column="35" selection-end-line="233" selection-end-column="35" />
+          <folding>
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#866#867#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1056,6 +947,18 @@
       <state key="ModuleStructureConfigurable.UI">
         <settings>
           <last-edited>AnalisadorLexico</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
