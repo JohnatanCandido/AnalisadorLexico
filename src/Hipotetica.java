@@ -28,6 +28,11 @@ class Tipos{
 	   	 op1=0;
    	 	 op2=0;
    	 }
+
+	@Override
+	public String toString() {
+		return codigo + " | " + op1 + " | " + op2;
+	}
 }
 
 /**
@@ -38,7 +43,7 @@ class Tipos{
  * para este aplicativo.
  */
 class AreaInstrucoes{
-	public Tipos AI[]= new Tipos[1000];
+	public Tipos AI[] = new Tipos[1000];
 	public int LC;
 	
     /**
@@ -47,7 +52,7 @@ class AreaInstrucoes{
    */
 	AreaInstrucoes(){
 		for(int i=0; i<1000; i++){
-			AI[i]=new Tipos();
+			AI[i] = new Tipos();
 		}
 	}
 }
@@ -60,7 +65,7 @@ class AreaInstrucoes{
  * para este aplicativo.
  */
 class AreaLiterais{
-	public String AL[]= new String[30];
+	public String AL[] = new String[30];
 	public int LIT;
 }
 
@@ -91,7 +96,7 @@ class Hipotetica{
    * Os atributos "nv", "np" e "num_impr" são inicializados com valores padrões.
    */	  
 	  Hipotetica(){
-	  	nv=np=num_impr=0;
+	  	nv = np = num_impr = 0;
 	  }
 	      		
 	  /**
@@ -99,11 +104,11 @@ class Hipotetica{
      */
 	  public static void InicializaAI(AreaInstrucoes AI){
 	  	for (int i=0;i<MaxInst;i++){ //começava de 1
-	  		AI.AI[i].codigo=-1;
-	  		AI.AI[i].op1=-1;
-	  		AI.AI[i].op2=-1;
+	  		AI.AI[i].codigo = -1;
+	  		AI.AI[i].op1 = -1;
+	  		AI.AI[i].op2 = -1;
 	  	}
-	  	AI.LC=0;
+	  	AI.LC = 0;
 	  }
 	  
     /**
@@ -112,8 +117,8 @@ class Hipotetica{
 	  public static void InicializaAL(AreaLiterais AL){
 	  	
 	  	for (int i=0;i<MaxList;i++){
-	  		AL.AL[i]="";
-	  		AL.LIT=0;
+	  		AL.AL[i] = "";
+	  		AL.LIT = 0;
 	  	}
 	  }
 	  
@@ -121,35 +126,25 @@ class Hipotetica{
      * Inclui uma instrução na área de instruções utilizada pela máquina
      * hipotética.
      */
-	  public boolean IncluirAI(AreaInstrucoes AI, int c, int o1, int o2) {
-	  	boolean aux;
-	  	if(AI.LC>=MaxInst)
-	  	{
-	  		aux=false;
-	  	}
-	  	else
-	  	{
-	  		aux=true;
-	  		AI.AI[AI.LC].codigo=c;
-	  		
-	  		if(o1 != -1)
-	  		{
-	  			AI.AI[AI.LC].op1=o1;
-	  		}
-	  			
-	  		if(c==24)
-	  		{
-	  			AI.AI[AI.LC].op2=o2;
-	  		}
-	  			
-	  		if(o2!=-1)
-	  		{
-	  			AI.AI[AI.LC].op2=o2;
-	  		}
-	  
-	  		AI.LC=AI.LC+1;
-	  	}
-	  	return aux;
+	  public static boolean IncluirAI(AreaInstrucoes AI, int c, int o1, int o2) {
+	  	if(AI.LC >= MaxInst)
+	  		return false;
+		AI.AI[AI.LC].codigo = c;
+
+		if(o1 != -1) {
+			AI.AI[AI.LC].op1 = o1;
+		}
+
+		if(c == 24) {
+			AI.AI[AI.LC].op2 = o2;
+		}
+
+		if(o2!=-1) {
+			AI.AI[AI.LC].op2 = o2;
+		}
+
+		AI.LC = AI.LC+1;
+	  	return true;
 	  }
 	  
      /**
@@ -158,12 +153,12 @@ class Hipotetica{
      */
 	  public static void AlterarAI(AreaInstrucoes AI, int s, int o1, int o2){
 	  	
-	  	if (o1!=-1){
-	  		AI.AI[s].op1=o1;
+	  	if (o1 != -1){
+	  		AI.AI[s].op1 = o1;
 	  	}
 	  		
-	  	if(o2!=-1){
-	  		AI.AI[s].op2=o2;
+	  	if(o2 != -1){
+	  		AI.AI[s].op2 = o2;
 	  	}
 	  }
 
@@ -172,26 +167,21 @@ class Hipotetica{
      * hipotética.
      */	  
 	  public static boolean IncluirAL(AreaLiterais AL, String literal){
-	  	boolean aux;
-	  	if (AL.LIT>=MaxList){
-	  		aux=false;	  		
-	  	}else{
-	  		aux=true;
-	  		AL.AL[AL.LIT]=literal;
-	  		AL.LIT=AL.LIT+1;
-	  	}
-	  	return aux;	  	
+	  	if (AL.LIT >= MaxList)
+	  		return false;
+		AL.AL[AL.LIT] = literal;
+		AL.LIT=AL.LIT+1;
+	  	return true;
 	  }
 
     /**
      * Utilizada para determinar a base.
      */	  
-	  public static int Base(){//determina base
-	  		int b1;
-	  		b1=b;
-	  		while(l>0){
-	  			b1=S[b1];
-	  			l=l-1;
+	  private static int Base(){//determina base
+	  		int b1=b;
+	  		while(l>0) {
+	  			b1 = S[b1];
+	  			l = l-1;
 	  		}
 	  		return b1;
 	  	}
@@ -215,8 +205,9 @@ class Hipotetica{
 	  	while (operador != 26) {//Enquanto instrução diferente de Pare
 	  		
 	  		operador=AI.AI[p].codigo;
-	  		
-	  		
+
+//			System.out.println(Util.getComandos().get(AI.AI[p].codigo) + " | " + AI.AI[p].op1 + " | " + AI.AI[p].op2);
+
 	  		l=AI.AI[p].op1;
 	  		a=AI.AI[p].op2;
 	  		p=p+1;
@@ -367,8 +358,8 @@ class Hipotetica{
 			       		break;
 			       		
 			       	case 22://IMPR
-			       		JOptionPane.showMessageDialog(null,"" + S[topo],"Informação",JOptionPane.INFORMATION_MESSAGE);
-			       		//System.out.println(S[topo]); A
+//			       		JOptionPane.showMessageDialog(null,"" + S[topo],"Informação",JOptionPane.INFORMATION_MESSAGE);
+			       		System.out.println(S[topo]);
 			       		topo=topo-1;
 			       		break;
 			       	
@@ -378,8 +369,8 @@ class Hipotetica{
 			       			JOptionPane.showMessageDialog(null,"Literal não encontrado na área dos literais.","Erro durante a execução",JOptionPane.ERROR_MESSAGE);
 			       			//System.out.println("ERRO >> Literal nao encontrada na area"); A
 			       		}else{
-			       			JOptionPane.showMessageDialog(null,"" + AL.AL[a],"Informação",JOptionPane.INFORMATION_MESSAGE);
-			       			//System.out.println(AL.AL[a]); A
+//			       			JOptionPane.showMessageDialog(null,"" + AL.AL[a],"Informação",JOptionPane.INFORMATION_MESSAGE);
+			       			System.out.println(AL.AL[a]);
 			       			//AL.LIT++;
 			       		}
 			       		break;

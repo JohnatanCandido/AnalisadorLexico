@@ -43,9 +43,6 @@ public class Semantico {
             case 102:
                 acaoSemantica102();
                 break;
-            case 103:
-                acaoSemantica103();
-                break;
             case 104:
                 acaoSemantica104(param);
                 break;
@@ -116,7 +113,7 @@ public class Semantico {
                 acaoSemantica129(param);
                 break;
             case 130:
-                acaoSemantica130();
+                acaoSemantica130(param);
                 break;
             case 131:
                 acaoSemantica131();
@@ -230,6 +227,9 @@ public class Semantico {
         procedures = new Stack<>();
         counters = new Stack<>();
 
+        Maquina.inicializaAreaIntrucoes();
+        Maquina.inicializaAreaLiterais();
+
         qtVariaveis = 0;
     }
     
@@ -241,8 +241,13 @@ public class Semantico {
      **/
     private static void acaoSemantica101() {
         codigoInterm.add(new String[] {"PARA", "-", "-"});
-        for (int i = 0; i < codigoInterm.size(); i++)
-            System.out.println(i + 1 + " | " + codigoInterm.get(i)[0] + " | " +  codigoInterm.get(i)[1] + " | " + codigoInterm.get(i)[2]);
+        for (int i = 0; i < codigoInterm.size(); i++) {
+//            String texto = String.format("%2s | %5s (%2s) | %2s | %2s", i+1,  codigoInterm.get(i)[0], Util.getComandos().indexOf(codigoInterm.get(i)[0]), codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
+            String texto = String.format("%2s | %5s | %2s | %2s", i+1,  codigoInterm.get(i)[0], codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
+            System.out.println(texto);
+            Maquina.incluiAreaInstrucao(codigoInterm.get(i)[0], codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
+        }
+        Maquina.interpreta();
     }
 
     /**
@@ -252,17 +257,9 @@ public class Semantico {
      */
     private static void acaoSemantica102() {
         codigoInterm.add(new String[] {"AMEN", "-", String.valueOf(3 + qtVariaveis)});
+//        deslocamento = 3;
         if (idAtual != null && idAtual.getCategoria().equals(Simbolo.Categoria.PROCEDURE))
             procedures.push(idAtual);
-    }
-
-    /**
-     * Após palavra LABEL em declaração de rótulo
-     * 
-     * - Seta tipo_identificador = rótulo
-     */
-    private static void acaoSemantica103() {
-        tipoIdentificador = Simbolo.Categoria.ROTULO;
     }
 
     /**
@@ -437,7 +434,7 @@ public class Semantico {
      */
     private static void acaoSemantica114(String nome) throws ErroSemantico {
         idAtual = tabelaSimbolos.busca(nome);
-        if (!idAtual.getCategoria().equals(tipoIdentificador))
+        if (!idAtual.getCategoria().equals(Simbolo.Categoria.VARIAVEL))
             throw new ErroSemantico("Não é uma variável");
     }
 
@@ -632,8 +629,9 @@ public class Semantico {
      * Nota : a área de literais (área_literais) e o ponteiro de literais (pont_literal) são gerados na fase de compilação
      * e utilizados na fase de interpretação (execução) do programa.
      */
-    private static void acaoSemantica130() {
-//      TODO
+    private static void acaoSemantica130(String literal) {
+        Maquina.incluiAreaLiterais(literal);
+        codigoInterm.add(new String[]{"IMPRL", "-", Maquina.retornaPonteiroLiteral()});
     }
 
     /**

@@ -696,4 +696,43 @@ public class Util {
         }
         return expansoes;
     }
+
+    private static List<String> comandos;
+    public static List<String> getComandos() {
+        if (comandos == null)
+            comandos = new ArrayList<>();
+        if (comandos.isEmpty()) {
+            comandos.add("$");
+            comandos.add("RETU");
+            comandos.add("CRVL");
+            comandos.add("CRCT");
+            comandos.add("ARMZ");
+            comandos.add("SOMA");
+            comandos.add("SUBT");
+            comandos.add("MULT");
+            comandos.add("DIVI");
+            comandos.add("INVR");
+            comandos.add("NEGA");
+            comandos.add("CONJ");
+            comandos.add("DISJ");
+            comandos.add("CMME");
+            comandos.add("CMMA");
+            comandos.add("CMIG");
+            comandos.add("CMDF");
+            comandos.add("CMEI");
+            comandos.add("CMAI");
+            comandos.add("DSVS");
+            comandos.add("DSVF");
+            comandos.add("LEIT");
+            comandos.add("IMPR");
+            comandos.add("IMPRL");
+            comandos.add("AMEN");
+            comandos.add("CALL");
+            comandos.add("PARA");
+            comandos.add("NADA");
+            comandos.add("COPI");
+            comandos.add("DSVT");
+        }
+        return comandos;
+    }
 }

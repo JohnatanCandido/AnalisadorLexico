@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class TabelaSimbolos {
 
     private final int tableSize;
@@ -19,14 +21,23 @@ public class TabelaSimbolos {
                 symbol = symbol.getProximo();
             }
             symbol.setProximo(simbolo);
-        }
-        simbolos[index] = simbolo;
+        } else
+            simbolos[index] = simbolo;
     }
 
     public Simbolo busca(String nome) throws ErroSemantico {
         Simbolo simbolo = simbolos[hash(nome)];
-        if (simbolo != null)
-            return simbolo;
+        List<Simbolo> simbolos = new ArrayList<>();
+        simbolos.add(simbolo);
+        while (simbolo.getProximo() != null) {
+            simbolo = simbolo.getProximo();
+            if (simbolo.getNome().equals(nome))
+                simbolos.add(simbolo);
+        }
+        if (simbolos.get(0) != null) {
+            simbolos.sort(Collections.reverseOrder(Comparator.comparing(Simbolo::getNivel)));
+            return simbolos.get(0);
+        }
         throw new ErroSemantico("Não foi possível encontrar o símbolo \"" + nome +"\"");
     }
 
@@ -52,8 +63,16 @@ public class TabelaSimbolos {
 
     public void removerNivel(Integer nivel) {
         for (int i = 0; i < simbolos.length; i++) {
-            if (simbolos[i] != null && simbolos[i].getNivel().equals(nivel))
-                simbolos[i] = null;
+            if (simbolos[i] != null && simbolos[i].getNivel().equals(nivel)) {
+                simbolos[i] = simbolos[i].getProximo();
+                i--;
+            }
+            Simbolo simbolo = simbolos[i];
+            while (simbolo != null) {
+                if (simbolo.getProximo() != null && simbolo.getProximo().getNivel().equals(nivel))
+                    simbolo.setProximo(simbolo.getProximo().getProximo());
+                simbolo = simbolo.getProximo();
+            }
         }
     }
 
