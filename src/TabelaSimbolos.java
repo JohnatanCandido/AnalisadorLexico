@@ -21,7 +21,7 @@ public class TabelaSimbolos {
                 symbol = symbol.getProximo();
             }
             symbol.setProximo(simbolo);
-        } else
+            } else
             simbolos[index] = simbolo;
     }
 

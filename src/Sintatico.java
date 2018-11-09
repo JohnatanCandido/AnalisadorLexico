@@ -71,7 +71,7 @@ public class Sintatico {
 //        System.out.print("Digite o número do exemplo: ");
 //        String n = scanner.nextLine().toLowerCase();
 //        scanner.close();
-        return Lexico.getListaPalavrasReconhecidas(new File("exemplo1.txt"));
+        return Lexico.getListaPalavrasReconhecidas(new File("exemplo4.txt"));
     }
 
     private static Stack<Object[]> fazAnaliseLexica(String[] texto) throws ErroLexico{

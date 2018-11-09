@@ -257,9 +257,10 @@ public class Semantico {
      */
     private static void acaoSemantica102() {
         codigoInterm.add(new String[] {"AMEN", "-", String.valueOf(3 + qtVariaveis)});
-//        deslocamento = 3;
-        if (idAtual != null && idAtual.getCategoria().equals(Simbolo.Categoria.PROCEDURE))
+
+        if (idAtual != null && idAtual.getCategoria().equals(Simbolo.Categoria.PROCEDURE)) {
             procedures.push(idAtual);
+        }
     }
 
     /**
@@ -363,6 +364,7 @@ public class Semantico {
         houve_param = false;
         num_param = 0;
         qtVariaveis = 0;
+        deslocamento = 3;
         nivelAtual++;
     }
 
@@ -506,7 +508,7 @@ public class Semantico {
      * - operando recebe valor de LC
      */
     private static void acaoSemantica121() {
-        codigoInterm.get(pilha_if.pop())[2] = String.valueOf(codigoInterm.size());
+        codigoInterm.get(pilha_if.pop())[2] = String.valueOf(codigoInterm.size() + 1);
     }
 
     /**

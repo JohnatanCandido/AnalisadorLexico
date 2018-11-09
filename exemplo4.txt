@@ -1,6 +1,14 @@
 PROGRAM testeproc4; (*teste TESTE *)
     CONST Z = 12;
+    VAR x, y :INTEGER;
     BEGIN
         READLN(x,y);
+        IF x > y THEN BEGIN
+            WRITELN("x: ", x);
+            WRITELN("y: ", y);
+        END ELSE BEGIN
+            WRITELN("y: ", y);
+            WRITELN("x: ", x);
+        END;
     END
 .

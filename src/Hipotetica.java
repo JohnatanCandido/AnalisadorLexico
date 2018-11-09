@@ -211,11 +211,15 @@ class Hipotetica{
 	  		l=AI.AI[p].op1;
 	  		a=AI.AI[p].op2;
 	  		p=p+1;
+
+//            System.out.println("\n\n==========================================================");
+//	  		for (int i = topo; i >= 0; i--)
+//				System.out.println(S[i]);
 	  		
 	  		switch (operador){
 			       	case 1://RETU
 			     		p=S[b+2];
-			     		topo=b-a;
+			     		topo=b-a-1;
 			     		b=S[b+1];
 				   		break;
 			       

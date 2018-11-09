@@ -1,11 +1,16 @@
 PROGRAM testeproc3;
     VAR
-        x, y, z :INTEGER;
+        w, x, y, z :INTEGER;
     BEGIN
-        IF a=2 THEN
-            z:=9+10
+        IF x=0 THEN BEGIN
+            w:=1;
+            x:=32;
+            y:=6;
+            z:=5;
+        END
         ELSE BEGIN
             z:=10-9;
         END;
+        WRITELN(w,x,y,z);
     END
 .

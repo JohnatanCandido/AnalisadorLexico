@@ -1,11 +1,14 @@
 PROGRAM testeproc5; (*teste TESTE *)
-    CONST A = 29;
-    BB = 49;
+    VAR
+        a, b :INTEGER;
     BEGIN
-        IF B=A THEN
-            L:=9+5
-        ELSE BEGIN
-            L:=9-5
-        END;
+        a := 5;
+        b := 1;
+
+        REPEAT BEGIN
+            b := b * a;
+            a := a-1;
+        END UNTIL a = 1;
+        WRITELN(b);
     END
 .
