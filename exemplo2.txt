@@ -1,4 +1,4 @@
-PROGRAM exempl;
+PROGRAM exemplo2;
     VAR
         i :INTEGER;
     BEGIN

@@ -1,5 +1,4 @@
 import java.io.File;
-import java.util.Scanner;
 import java.util.Stack;
 
 
@@ -13,7 +12,7 @@ public class Sintatico {
         }
     }
 
-    public static String fazAnaliseSintatica(String[] texto) throws ErroLexico, ErroSintatico, ErroSemantico {
+    public static void fazAnaliseSintatica(String[] texto) throws ErroLexico, ErroSintatico, ErroSemantico {
         Stack<Integer> pilha = new Stack<>();
         String ultimaPalavra = "$";
 
@@ -51,12 +50,11 @@ public class Sintatico {
                         throw new ErroSintatico(simboloLinha[1].toString(), Util.getMensagemTokensEsperados(topo, pilha));
                     }
                 } else {
-                    Semantico.trataAcaoSemantica(topo, ultimaPalavra);
+                    Semantico.trataAcaoSemantica(topo, ultimaPalavra, simboloLinha[1].toString());
                 }
             }
         }
-        System.out.println("Término da execução");
-        return "Análise completa!";
+        TelaController.saida.append("\nExecução completa.");
     }
 
     private static void empilha(Stack<Integer> pilha, int[] lista) {
@@ -67,14 +65,10 @@ public class Sintatico {
     }
 
     private static Stack<Object[]> fazAnaliseLexica() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Digite o número do exemplo: ");
-//        String n = scanner.nextLine().toLowerCase();
-//        scanner.close();
         return Lexico.getListaPalavrasReconhecidas(new File("exemplo4.txt"));
     }
 
     private static Stack<Object[]> fazAnaliseLexica(String[] texto) throws ErroLexico{
-        return Lexico.getListaPalavrasReconhecidas(texto);
+        return (Stack<Object[]>) Lexico.getListaPalavrasReconhecidas(texto, false);
     }
 }

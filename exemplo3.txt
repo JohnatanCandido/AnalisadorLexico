@@ -1,4 +1,4 @@
-PROGRAM testeproc3;
+PROGRAM exemplo3;
     VAR
         w, x, y, z :INTEGER;
     BEGIN

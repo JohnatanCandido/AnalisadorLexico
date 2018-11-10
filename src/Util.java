@@ -23,6 +23,8 @@ public class Util {
     private static Map<String, Integer> palavrasReservadas = new HashMap<>();
     public static Map<String, Integer> simbolosEspeciais = new HashMap<>();
 
+    public static Map<Integer, String> descricoes = new HashMap<>();
+
     static {
         for (int i = 0; i < alfabeto.size(); i++)
             for (int j = 0; j < estados.size(); j++)
@@ -578,6 +580,52 @@ public class Util {
         palavrasReservadas.put("or", 41);
         palavrasReservadas.put("and", 44);
         palavrasReservadas.put("not", 45);
+
+        descricoes.put(1, "Fim arquivo");
+        descricoes.put(4, "Ponto e vírgula");
+        descricoes.put(5, "Ponto");
+        descricoes.put(6, "Vírgula");
+        descricoes.put(8, "Sinal de igual");
+        descricoes.put(11, "Dois pontos");
+        descricoes.put(14, "Abrepar");
+        descricoes.put(15, "Fechapar");
+        descricoes.put(18, "Sinal de atribuição");
+        descricoes.put(34, "Sinal de menor");
+        descricoes.put(35, "Sinal de maior");
+        descricoes.put(36, "Sinal de maior ou igual");
+        descricoes.put(37, "Sinal de menor ou igual");
+        descricoes.put(38, "Sinal de diferente");
+        descricoes.put(39, "Sinal de adição");
+        descricoes.put(40 ,"Sinal de subtração");
+        descricoes.put(42, "Sinal de multiplicação");
+        descricoes.put(43, "Sinal de divisão");
+        descricoes.put(2, "Palavra reservada");
+        descricoes.put(3, "Identificador");
+        descricoes.put(7, "Palavra reservada");
+        descricoes.put(9, "Número inteiro");
+        descricoes.put(10, "Palavra reservada");
+        descricoes.put(12, "Palavra reservada");
+        descricoes.put(13, "Palavra reservada");
+        descricoes.put(16, "Palavra reservada");
+        descricoes.put(17, "Palavra reservada");
+        descricoes.put(19, "Palavra reservada");
+        descricoes.put(20, "Palavra reservada");
+        descricoes.put(21, "Palavra reservada");
+        descricoes.put(22, "Palavra reservada");
+        descricoes.put(23, "Palavra reservada");
+        descricoes.put(24, "Palavra reservada");
+        descricoes.put(25, "Palavra reservada");
+        descricoes.put(26, "Palavra reservada");
+        descricoes.put(27, "Palavra reservada");
+        descricoes.put(28, "Palavra reservada");
+        descricoes.put(29, "Literal");
+        descricoes.put(30, "Palavra reservada");
+        descricoes.put(31, "Palavra reservada");
+        descricoes.put(32, "Palavra reservada");
+        descricoes.put(33, "Palavra reservada");
+        descricoes.put(41, "Palavra reservada");
+        descricoes.put(44, "Palavra reservada");
+        descricoes.put(45, "Palavra reservada");
     }
 
     public static String pegaProximoEstado(char c, String estadoAtual) throws NullPointerException {

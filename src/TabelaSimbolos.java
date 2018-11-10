@@ -17,7 +17,7 @@ public class TabelaSimbolos {
             Simbolo symbol = simbolos[index];
             while (symbol.getProximo() != null) {
                 if (symbol.getNome().equals(nome) && symbol.getNivel().equals(nivel))
-                    throw new ErroSemantico("Nome " + nome + " já declarado.");
+                    throw new ErroSemantico(Semantico.linhaAtual, "Nome " + nome + " já declarado.");
                 symbol = symbol.getProximo();
             }
             symbol.setProximo(simbolo);
@@ -27,18 +27,21 @@ public class TabelaSimbolos {
 
     public Simbolo busca(String nome) throws ErroSemantico {
         Simbolo simbolo = simbolos[hash(nome)];
-        List<Simbolo> simbolos = new ArrayList<>();
-        simbolos.add(simbolo);
-        while (simbolo.getProximo() != null) {
-            simbolo = simbolo.getProximo();
-            if (simbolo.getNome().equals(nome))
-                simbolos.add(simbolo);
+        if (simbolo != null) {
+            List<Simbolo> simbolos = new ArrayList<>();
+            simbolos.add(simbolo);
+            while (simbolo.getProximo() != null) {
+                simbolo = simbolo.getProximo();
+                if (simbolo.getNome().equals(nome))
+                    simbolos.add(simbolo);
+            }
+            if (simbolos.get(0) != null) {
+                simbolos.sort(Collections.reverseOrder(Comparator.comparing(Simbolo::getNivel)));
+                return simbolos.get(0);
+            }
         }
-        if (simbolos.get(0) != null) {
-            simbolos.sort(Collections.reverseOrder(Comparator.comparing(Simbolo::getNivel)));
-            return simbolos.get(0);
-        }
-        throw new ErroSemantico("Não foi possível encontrar o símbolo \"" + nome +"\"");
+
+        throw new ErroSemantico(Semantico.linhaAtual, "Não foi possível reconhecer o símbolo \"" + nome +"\"");
     }
 
     public Simbolo buscaParametro(String nome) throws ErroSemantico {

@@ -12,7 +12,7 @@ public class Main extends Application {
             AnchorPane root = FXMLLoader.load(getClass().getResource("Tela.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Analisador Sintático");
+            primaryStage.setTitle("Compilador");
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();

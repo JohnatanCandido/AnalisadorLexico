@@ -1,4 +1,4 @@
-Program ProgramaTrabalho3;
+Program exemplo1;
 Const
 	max_cont = 10;
 Var

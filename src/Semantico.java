@@ -31,8 +31,10 @@ public class Semantico {
     private static Integer num_param_efetivos = 0;
     private static Integer deslocamento = 3;
 
+    public static String linhaAtual;
 
-    public static void trataAcaoSemantica(Integer id, String param) throws ErroSintatico, ErroSemantico {
+    public static void trataAcaoSemantica(Integer id, String param, String linha) throws ErroSintatico, ErroSemantico {
+        linhaAtual = linha;
         switch (id) {
             case 100:
                 acaoSemantica100();
@@ -437,7 +439,7 @@ public class Semantico {
     private static void acaoSemantica114(String nome) throws ErroSemantico {
         idAtual = tabelaSimbolos.busca(nome);
         if (!idAtual.getCategoria().equals(Simbolo.Categoria.VARIAVEL))
-            throw new ErroSemantico("Não é uma variável");
+            throw new ErroSemantico(linhaAtual, "Não é uma variável");
     }
 
     /**
@@ -461,7 +463,7 @@ public class Semantico {
     private static void acaoSemantica116(String nome) throws ErroSemantico {
         Simbolo procedure = tabelaSimbolos.busca(nome);
         if (!procedure.getCategoria().equals(Simbolo.Categoria.PROCEDURE))
-            throw new ErroSemantico(nome + " não é uma procedure!");
+            throw new ErroSemantico(linhaAtual, nome + " não é uma procedure!");
         idAtual = procedure;
     }
 
@@ -476,7 +478,7 @@ public class Semantico {
      */
     private static void acaoSemantica117() throws ErroSemantico {
         if (!idAtual.getGeralB().equals(num_param_efetivos))
-            throw new ErroSemantico("????");
+            throw new ErroSemantico(linhaAtual, "????");
         num_param_efetivos = 0;
         codigoInterm.add(new String[]{"CALL", String.valueOf(nivelAtual - idAtual.getNivel()), idAtual.getGeralA().toString()});
     }
@@ -612,7 +614,7 @@ public class Semantico {
         } else if (contexto.equals("expressão")) {
             Simbolo variavel = tabelaSimbolos.busca(nome);
             if (variavel.getCategoria().equals(Simbolo.Categoria.PROCEDURE) || variavel.getCategoria().equals(Simbolo.Categoria.ROTULO))
-                throw new ErroSemantico("Acho que não devia ser procedure nem rotulo");
+                throw new ErroSemantico(linhaAtual, "Acho que não devia ser procedure nem rotulo");
             else if (variavel.getCategoria().equals(Simbolo.Categoria.CONSTANTE))
                 codigoInterm.add(new String[]{"CRCT", "-", variavel.getGeralA().toString()});
             else

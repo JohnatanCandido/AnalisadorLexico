@@ -1,8 +1,11 @@
+import javafx.util.Pair;
+
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Stack;
 
@@ -29,7 +32,7 @@ public class Lexico {
         return pilhaPalavrasReconhecidas;
     }
 
-    public static Stack<Object[]> getListaPalavrasReconhecidas(String[] texto) throws ErroLexico {
+    public static Collection<Object[]> getListaPalavrasReconhecidas(String[] texto, boolean listar) throws ErroLexico {
         palavrasReconhecidas.clear();
         int linha = 0;
         try {
@@ -41,6 +44,9 @@ public class Lexico {
         } catch (ErroLexico e) {
             throw new ErroLexico("Erro na linha " + (linha + 1) + "\n" + e.getMessage());
         }
+        if (listar)
+            return palavrasReconhecidas;
+
         Stack<Object[]> pilhaPalavrasReconhecidas = new Stack<>();
         for (int i = palavrasReconhecidas.size() - 1; i >= 0; i--)
             pilhaPalavrasReconhecidas.push(palavrasReconhecidas.get(i));
@@ -101,7 +107,7 @@ public class Lexico {
         Integer codigo = Util.pegaCodigoDescricao(buffer.toString());
         if (codigo > 0) {
 //            System.out.println(buffer.toString());
-            palavrasReconhecidas.add(new Object[]{codigo, linha, buffer.toString()});
+            palavrasReconhecidas.add(new Object[]{codigo, linha, buffer.toString(), Util.descricoes.get(codigo)});
         }
     }
 }

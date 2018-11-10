@@ -363,7 +363,7 @@ class Hipotetica{
 			       		
 			       	case 22://IMPR
 //			       		JOptionPane.showMessageDialog(null,"" + S[topo],"Informação",JOptionPane.INFORMATION_MESSAGE);
-			       		System.out.println(S[topo]);
+			       		TelaController.saida.append(S[topo]).append("\n");
 			       		topo=topo-1;
 			       		break;
 			       	
@@ -374,7 +374,7 @@ class Hipotetica{
 			       			//System.out.println("ERRO >> Literal nao encontrada na area"); A
 			       		}else{
 //			       			JOptionPane.showMessageDialog(null,"" + AL.AL[a],"Informação",JOptionPane.INFORMATION_MESSAGE);
-			       			System.out.println(AL.AL[a]);
+							TelaController.saida.append(AL.AL[a]).append("\n");
 			       			//AL.LIT++;
 			       		}
 			       		break;
