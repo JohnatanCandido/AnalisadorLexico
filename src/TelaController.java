@@ -34,19 +34,31 @@ public class TelaController {
 
     @FXML
     public void fazAnaliseSintatica() {
-        saida = new StringBuilder();
+        try {
+            saida = new StringBuilder();
+            Sintatico.fazAnaliseSintatica(texto.getText().split("\n"), 0);
+            log.setText(saida.toString());
+        } catch (ErroLexico | ErroSintatico | ErroSemantico e) {
+            log.setText(e.getMessage());
+        }
     }
 
     @FXML
     public void fazAnaliseSemantica() {
-        saida = new StringBuilder();
+        try {
+            saida = new StringBuilder();
+            Sintatico.fazAnaliseSintatica(texto.getText().split("\n"), 1);
+            log.setText(saida.toString());
+        } catch (ErroLexico | ErroSintatico | ErroSemantico e) {
+            log.setText(e.getMessage());
+        }
     }
 
     @FXML
     public void interpretar() {
         try {
             saida = new StringBuilder();
-            Sintatico.fazAnaliseSintatica(texto.getText().split("\n"));
+            Sintatico.fazAnaliseSintatica(texto.getText().split("\n"), 2);
             log.setText(saida.toString());
         } catch (ErroLexico | ErroSintatico | ErroSemantico e) {
             log.setText(e.getMessage());

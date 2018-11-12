@@ -33,14 +33,14 @@ public class Semantico {
 
     public static String linhaAtual;
 
-    public static void trataAcaoSemantica(Integer id, String param, String linha) throws ErroSintatico, ErroSemantico {
+    public static void trataAcaoSemantica(Integer id, String param, String linha, boolean interpreta) throws ErroSintatico, ErroSemantico {
         linhaAtual = linha;
         switch (id) {
             case 100:
                 acaoSemantica100();
                 break;
             case 101:
-                acaoSemantica101();
+                acaoSemantica101(interpreta);
                 break;
             case 102:
                 acaoSemantica102();
@@ -218,6 +218,8 @@ public class Semantico {
      * - Lit := 1 { ponteiro auxiliar para área de literais – n. de ordem}
      **/
     private static void acaoSemantica100() {
+        codigoInterm.clear();
+
         tabelaSimbolos = new TabelaSimbolos();
         pilha_if = new Stack<>();
         pilha_while = new Stack<>();
@@ -232,6 +234,7 @@ public class Semantico {
         Maquina.inicializaAreaIntrucoes();
         Maquina.inicializaAreaLiterais();
 
+        deslocamento = 3;
         qtVariaveis = 0;
     }
     
@@ -241,15 +244,20 @@ public class Semantico {
      * - Gera instrução PARA
      * - Verifica utilização de rótulos através da tabela de símbolos
      **/
-    private static void acaoSemantica101() {
+    private static void acaoSemantica101(boolean interpreta) {
         codigoInterm.add(new String[] {"PARA", "-", "-"});
         for (int i = 0; i < codigoInterm.size(); i++) {
-//            String texto = String.format("%2s | %5s (%2s) | %2s | %2s", i+1,  codigoInterm.get(i)[0], Util.getComandos().indexOf(codigoInterm.get(i)[0]), codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
             String texto = String.format("%2s | %5s | %2s | %2s", i+1,  codigoInterm.get(i)[0], codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
-            System.out.println(texto);
-            Maquina.incluiAreaInstrucao(codigoInterm.get(i)[0], codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
+            TelaController.saida.append(texto).append("\n");
+
+            if (interpreta)
+                Maquina.incluiAreaInstrucao(codigoInterm.get(i)[0], codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
         }
-        Maquina.interpreta();
+        if (interpreta) {
+            TelaController.saida.append("\n============================================================");
+            TelaController.saida.append("\nIniciando interpretação\n\n");
+            Maquina.interpreta();
+        }
     }
 
     /**

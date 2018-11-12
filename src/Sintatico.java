@@ -6,13 +6,13 @@ public class Sintatico {
 
     public static void main(String[] args) {
         try {
-            fazAnaliseSintatica(null);
+            fazAnaliseSintatica(null, 2);
         } catch (ErroLexico | ErroSintatico | ErroSemantico e) {
             e.printStackTrace();
         }
     }
 
-    public static void fazAnaliseSintatica(String[] texto) throws ErroLexico, ErroSintatico, ErroSemantico {
+    public static void fazAnaliseSintatica(String[] texto, int cod) throws ErroLexico, ErroSintatico, ErroSemantico {
         Stack<Integer> pilha = new Stack<>();
         String ultimaPalavra = "$";
 
@@ -49,8 +49,8 @@ public class Sintatico {
                     } else { // Se não encontrar lança um erro dizendo quais símbolos deveriam ter sido encontrados
                         throw new ErroSintatico(simboloLinha[1].toString(), Util.getMensagemTokensEsperados(topo, pilha));
                     }
-                } else {
-                    Semantico.trataAcaoSemantica(topo, ultimaPalavra, simboloLinha[1].toString());
+                } else if (cod > 0){
+                    Semantico.trataAcaoSemantica(topo, ultimaPalavra, simboloLinha[1].toString(), cod == 2);
                 }
             }
         }
