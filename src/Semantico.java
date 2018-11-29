@@ -248,13 +248,14 @@ public class Semantico {
         codigoInterm.add(new String[] {"PARA", "-", "-"});
         for (int i = 0; i < codigoInterm.size(); i++) {
             String texto = String.format("%2s | %5s | %2s | %2s", i+1,  codigoInterm.get(i)[0], codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
-            TelaController.saida.append(texto).append("\n");
+//            TelaController.saida.append(texto).append("\n");
+            System.out.println(texto);
 
             if (interpreta)
                 Maquina.incluiAreaInstrucao(codigoInterm.get(i)[0], codigoInterm.get(i)[1], codigoInterm.get(i)[2]);
         }
         if (interpreta) {
-            TelaController.saida.append("\n============================================================");
+//            TelaController.saida.append("\n============================================================");
             TelaController.saida.append("\nIniciando interpretação\n\n");
             Maquina.interpreta();
         }
@@ -539,7 +540,7 @@ public class Semantico {
      * o valor de LC é armazenado na pilha dos WHILE’s, este é o endereço de retorno do WHILE
      */
     private static void acaoSemantica123() {
-        pilha_while.push(codigoInterm.size());
+        pilha_while.push(codigoInterm.size() + 1);
     }
 
     /**
@@ -560,7 +561,7 @@ public class Semantico {
      * - gera DSVS com operando = endereço de retorno, salvo na pilha de ação #123
      */
     private static void acaoSemantica125() {
-        codigoInterm.get(pilha_while.pop())[2] = String.valueOf(codigoInterm.size() + 1);
+        codigoInterm.get(pilha_while.pop())[2] = String.valueOf(codigoInterm.size() + 2);
         codigoInterm.add(new String[]{"DSVS", "-", String.valueOf(pilha_while.pop())});
     }
 

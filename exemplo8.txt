@@ -1,11 +1,11 @@
-PROGRAM testeproc5; (*teste TESTE *)
-    CONST A = 29;
-    BB = 49;
+PROGRAM exemplo8;
     BEGIN
-        IF B=A THEN
-            L:=9+5
-        ELSE BEGIN
-            :=9-5
+        WRITELN("Informe um numero de 1 a 10");
+        READLN(x);
+
+        CASE x OF
+            1,3,5,7,9: WRITELN("Este numero eh impar");
+            2,4,6,8,10: WRITELN("Este numero eh par")
         END;
     END
 .

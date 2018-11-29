@@ -1,16 +1,13 @@
 PROGRAM exemplo3;
     VAR
-        w, x, y, z :INTEGER;
+        x :INTEGER;
     BEGIN
-        IF x=0 THEN BEGIN
-            w:=1;
-            x:=32;
-            y:=6;
-            z:=5;
-        END
-        ELSE BEGIN
-            z:=10-9;
+        WRITELN("Informe um numero de 1 a 10");
+        READLN(x);
+
+        CASE x OF
+            1,3,5,7,9: WRITELN("Este numero eh impar");
+            2,4,6,8,10: WRITELN("Este numero eh par")
         END;
-        WRITELN(w,x,y,z);
     END
 .

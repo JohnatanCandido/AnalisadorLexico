@@ -1,26 +1,11 @@
-PROGRAM testeproc1; (*teste TESTE *)
+PROGRAM exemplo2;
     VAR
-        x, y, z :INTEGER;
-
-    PROCEDURE p;
-    VAR
-        a :INTEGER;
-    BEGIN (* teste *)
-        READLN(a);
-        IF a=x THEN
-            z:=z+x
-        ELSE BEGIN
-            z:=z-x;
-            CALL p;
-        END;
-    END;
+        i :INTEGER;
     BEGIN
-        z:=0;
-        READLN x,y);
-        IF x>y THEN
-            CALL p
-        ELSE
-            z:=z+x+y;
-        WRITELN(z);
+        i := 0;
+        WHILE i < 10 DO BEGIN
+            WRITELN(i)
+            i := i + 1;
+        END;
     END
 .

@@ -65,7 +65,7 @@ public class Sintatico {
     }
 
     private static Stack<Object[]> fazAnaliseLexica() {
-        return Lexico.getListaPalavrasReconhecidas(new File("exemplo4.txt"));
+        return Lexico.getListaPalavrasReconhecidas(new File("exemplo2.txt"));
     }
 
     private static Stack<Object[]> fazAnaliseLexica(String[] texto) throws ErroLexico{
